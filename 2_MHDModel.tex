@@ -1,0 +1,102 @@
+\chapter{The Michigan model for Jupiter's magnetosphere}
+
+\section{Global MHD modeling of planetary magnetospheres}
+
+\subsection{The BATSRUS MHD model}
+In this work, we use the Block-Adaptive Roe-type Solar wind Tree Upwind Scheme (BATSRUS) magnetohydrodynamic (MHD) solver. BATSRUS uses a finite-volume approach. BATSRUS itself can be used as a component in the Space Weather Modeling Framework (SWMF) \cite{Toth2012a}, developed at the University of Michigan, a collection of models which can be used in conjunction to simulate various space plasma phenomena. 
+
+Over the decades, BATSRUS has developed into an industry standard for simulating the space environment, especially in global magnetohydrodynamic modeling of planetary magnetospheres such as that of Earth, Mercury, Saturn and Jupiter. In this work, we use BATSRUS to solve the single-fluid, ideal, semi-relativistic MHD equations, repeated below from \citeA{Gombosi2002b} in the conservative form. 
+
+\begin{equation}
+    \frac{\partial \mathbf{W}}{\partial t} + \left(\nabla \cdot \mathbf{F} \right)^T = \mathbf{S}
+\end{equation}
+
+\begin{equation}
+    \mathbf{W} = \left[ \begin{array}{c}
+    \rho\\
+    \rho \mathbf{u} + \frac{1}{c^2}\mathbf{S}_A\\ 
+    \mathbf{B}     \\
+    \frac{1}{2}\rho u^2 + \frac{p}{\gamma - 1} + e_A\\
+    \end{array} \right]
+\end{equation}
+
+
+\begin{equation}
+    \mathbf{F} = \left[ \begin{array}{c}
+    \rho \mathbf{u}\\
+    \rho \mathbf{u} \mathbf{u} + p\mathbf{I} + \mathbf{P}_A\\ 
+    \mathbf{u}\mathbf{B} - \mathbf{B}\mathbf{u}\\
+    \left(\frac{1}{2}\rho u^2 + \frac{\gamma p}{\gamma - 1}\right)\mathbf{u} + \mathbf{S}_A\\
+    \end{array} \right]^T
+\end{equation}
+
+Where $\mathbf{W}$ is the state vector and $\mathbf{F}$ is the flux diad, comprising of the primitive variables - mass density $\rho$, plasma velocity $\mathbf{u}$, magnetic field intensity $\mathbf{B}$ and thermal pressure $p$. Note that in ideal MHD, the electric field is defined to be $\mathbf{E} = -\mathbf{u} \times \mathbf{B}$ (also called the motional electric field). The source terms ($\mathbf{S}$) on the right hand side will be discussed in a later section. $\mathbf{S}_A$, $e_A$, and $\mathbf{P}_A$ are the Poynting vector, electromagnetic energy density and electromagnetic pressure tensor.
+
+\begin{align}
+    \mathbf{S}_A & = \frac{1}{\mu_0} \mathbf{E} \times \mathbf{B}\\
+    e_A &= \frac{1}{2\mu_0} \left( B^2 + \frac{1}{c^2} E^2\right)\\
+    \mathbf{P}_A &= e_A \mathbf{I} - \frac{\mathbf{B}\mathbf{B}}{\mu_0} - \frac{1}{\mu_0 c^2}\mathbf{E}\mathbf{E}
+\end{align}
+
+The semi-relativistic equations are derived from the full relativistic MHD equations \cite{Gombosi2002b} by keeping the relativistic treatment of the electromagnetic terms while assuming that the plasma flow itself is non-relativistic. The use of semi-relativistic or fully relativistic MHD equations is crucial to accurately simulate Jupiter's magnetosphere since Alfven speeds near the polar regions of the planet approach the speed of light due to the strong planetary magnetic field. This is a major limitation on numerical models, as the CFL criteria specifies that the simulation time step in time-accurate simulations be lower than that determined roughly by the ratio of the grid spacing and the maximum wave speed in the system. Typically, the maximum wavespeed in the system is further limited to a fraction of the speed of light, also called the Boris correction \cite{Toth2011}. In our simulations the Boris correction factor is between 0.1 to 1 (no Boris correction).
+
+Our MHD model for Jupiter's magnetosphere utilizes the Space Weather Modeling Framework (SWMF) developed at the University of Michigan \cite{Toth2012a} and is an extension of the model used by \cite{Hansen2001a}. Two modules of the SWMF are used—a magnetospheric solver that employs BATSRUS \cite{Gombosi2002b,Powell1999a}, and a Poisson solver for the ionospheric electrodynamics (\cite{Ridley2004IonosphericConductance}), and the two modules are two‐way coupled through the SWMF. In this work we use the single‐fluid, semirelativistic version of BATSRUS, which solves the ideal MHD equations using a finite‐volume approach. Details about the implementation of BATSRUS and the equations solved in this study can be found in \cite{Gombosi2002b} and \cite{Toth2012a}. The maximum wave speed allowable by the semirelativistic equations is the speed of light \cite{Gombosi2002b}; however, we employ the Boris correction that artificially decreases this speed by a factor of 0.1 to allow for larger time steps \cite{Toth2011}. Two‐way coupling between BATSRUS and the IE solver is achieved in the following manner. Field‐aligned currents from the magnetosphere are collected at a prescribed radial distance of 3 $R_J$ ($R_J$ = 71,492 km is Jupiter's mean radius) and are mapped to the surface of the planet assuming that the magnetic field between 1 and 3 $R_J$ is dipolar. At the surface, a Poisson solver is used to solve Ohm's law for a given distribution of ionospheric conductance. In the present work, we assume a uniform Pedersen conductance of 0.05 S, which is on the lower end of previous estimates (0.1–10 S by \cite{Strobel1983Ionosphere,Nichols2003}) and set the Hall conductance to 0. The perturbation electric field obtained from the IE module is added to the corotational electric field, and the total electric field is then used to prescribe the plasma velocity at the inner boundary of the MHD domain at 2.5 $R_J$. A detailed discussion of how this coupling is achieved is given by \cite{Ridley2004IonosphericConductance} in the context of the terrestrial magnetosphere and by \cite{Jia2012,Jia2012DrivingSources} in application to Saturn's magnetosphere. The planetary magnetic field currently used in our model is an axisymmetric dipole with an equatorial surface field strength of 428,000 nT, and the rotation period of the planet is set to be 9.9 hr.
+
+Our three‐dimensional magnetospheric simulation domain spans a spherical region of 1800 $R_J$ centered at Jupiter, along with a planar cut at $X$ = +92 $R_J$ that serves as the upstream boundary (Figure 1). The radial spacing between the grid cells increases in a logarithmic manner allowing for finer cells placed in regions close to the planet. The simulation domain is subdivided into a number of blocks \cite{Powell1999a}, which can be refined independently to obtain the desired grid resolution in regions of interest, such as the equatorial magnetosphere, the magnetopause boundary, and the magnetotail. Although BATSRUS allows for physics criteria‐based adaptive grid refinements \cite{Toth2012a}, in our simulations the refinements are prescribed initially and are fixed. The spherical inner boundary of our simulation domain is located at 2.5 $R_J$, which then allows us to include the Io plasma torus centered at $\sim$5.9 $R_J$ at the appropriate location. We specifically chose to refine a torus‐like region near Io's orbit for accurately modeling the mass loading processes occurring in the Io plasma torus. The smallest radial grid spacing is $\sim$0.06 $R_J$, which is present in the Io plasma torus. Figure 1 shows our simulation grid with contours of simulated plasma density shown in the background for context. The relatively coarse grids near the polar regions of the planet were chosen to allow for larger time steps in order to increase the speed of the simulation, as these regions contain strong magnetic fields and thus high wave speeds as well as small grid cells due to the convergence of the spherical grid near the $Z$ axis. 
+
+All MHD variables at the upstream boundary at $X$ = 192 $R_J$ are prescribed on account of the super‐Alfvenic and supersonic flow, whereas floating boundary conditions that set zero gradients for all MHD variations are applied at the outer boundary in the downstream direction (located at -1800 $R_J$). At the inner boundary at 2.5 $R_J$, we fixed the plasma density at 50 amu/cm$^3$ and set the magnetic field and plasma pressure to float. Using the electrostatic potential calculated by the IE Poisson solver, we calculate the electric field at the inner boundary. The $\mathbf{E} \times \mathbf{B}$ velocity thus obtained is added to the corotation velocity ($\mathbf{v} = -\mathbf{\omega} \times \mathbf{r}$) at the inner boundary.
+
+The fluxes at cell interfaces used in the finite‐volume method are calculated using a second‐order accurate implementation of Linde's HLL scheme \cite{Linde2002}. To achieve computational speeds feasible for running long‐duration simulations, we employ a hybrid time‐stepping scheme. Explicit time‐stepping methods are subject to the Courant‐Friedrichs‐Lewy criterion that imposes a stringent constraint on the allowable time step, which may become rather small in regions of high wave speeds, such as the polar region near the planet. Implicit time‐stepping schemes are unconditionally stable and therefore allow larger time steps but involve matrix inversion, which can be computationally expensive for large systems. To combine the strengths of these two methods, we use a “explicit/implicit” time‐stepping algorithm developed by \cite{Toth2006AGrids}. Since our domain is divided into grid blocks, with each block containing $6 \times 8 \times 8$ cells, this algorithm allows for each block to be solved using either explicit or implicit time stepping for a prescribed value of the computational time step. Blocks in which all cells abide by the CFL criterion defined for the time step are solved using explicit time stepping. In total, our finite‐volume grid contains approximately 19 million cells, and with a 20‐s time step our global model can achieve almost real‐time performance using $\sim$2,000 cores on NASA's supercomputer Pleiades.
+
+\subsection{The Ridley Ionosphere Electrodynamics solver}
+The coupling between the magnetosphere and the conducting ionosphere is simulated using the Ridley Ionosphere Electrodynamics (IE) solver. The IE solver operates under an electrostatic assumption and solves for the electrostatic potential on a spherical surface of radius 1 R$_J$ using the Poisson equation \cite{Ridley2004IonosphericConductance}.
+\begin{equation}
+    j_R \left(R_1\right) = \left[ \nabla_\perp \cdot \left( \mathbf{\Sigma} \cdot \nabla \psi \right) \right]_{r=R_1}
+\end{equation}
+
+Where $j_R$ is the current density in the radial direction, $\psi$ is the electrostatic potential on the surface and $\mathbf{\Sigma}$ is the conductance tensor which, in a cartesian coordinate system where $Z$ in the direction of the magnetic field, takes the form 
+\begin{equation}
+    \mathbf{\Sigma} = \left[ \begin{array}{ccc}
+    \Sigma_P     &-\Sigma_H   &0  \\
+    \Sigma_H     &\Sigma_P   &0  \\
+    0          &0        &\Sigma_0
+    \end{array} \right]
+\end{equation}
+
+With $\Sigma_H$, $\Sigma_P$ and $\Sigma_0$ being the Hall, Pedersen and Alfven conductance respectively. The IE solver uses a finite differences to construct the linear system which is solved using iterative methods separately for the northern and southern hemispheres. 
+
+\subsection{Mass loading sources terms}
+In order to accurately model Jupiter's magnetosphere, it is necessary to include the contribution of plasma by its moons, especially Io. Io provides the largest internal source of plasma to Jupiter's magnetosphere, estimated to add $\sim$250 kg/s to 1 ton/s of plasma \cite{Bagenal2011b}. In our model, we include contributions due to ionization and charge‐exchange in the form of source terms in the mass, momentum, and energy equations. Electron recombination is assumed to be a minor process and, therefore, neglected in the present simulations. We use a prescribed neutral torus centered at Io's orbital radius of 5.9 $R_J$ according to the following form. The neutral distribution used for the Io torus is a modified form of the one obtained by \cite{Schreier1998a} and an exponential falloff with latitude is considered. We use the following expression to calculate the neutral number density ($n_n$ [cm$^{-3}$]) at a spatial location ($r_{xy} = \sqrt{x^2 + y^2}$ $R_J$). 
+
+\begin{equation}
+    n_n \left(r_{xy}, z\right) = n_{n_0} \exp{\left(\frac{-z^2}{H_s^2}\right)}\times 
+    \begin{cases}
+        60 \exp\left( \frac{r_{xy} - 5.71}{0.2067}\right), & r_{xy} < 5.71\\
+        60 \exp\left( \frac{-r_{xy} + 5.685}{0.1912}\right), &
+        5.71 \leq r_{xy} < 5.875\\
+        19.9 \exp\left( \frac{-r_{xy} + 5.9455}{0.0531 r_{xy} + 0.5586 }\right), &r_{xy} >= 5.875
+    \end{cases}
+\end{equation}
+
+where the scale height is chosen to be $H_s = r_{xy} \tan^{-1}2.5^\circ$. New ions are produced from the above neutral distribution by multiplying with a constant ionization rate and collision cross section based on the following expression for the net plasma production rate per unit volume (units of kg m$^{-3}$ s$^{-1}$):
+
+\begin{equation}
+    \dot{\rho} = 16 m_p n_n C_i
+\end{equation}
+
+Here $C_i$ is the ionization rate (specified to 10$^{-4}$ s$^{-1}$ in our simulations) and 16 amu is taken to be the average mass of the heavy ions present in Jupiter's magnetosphere. With this information, we construct the source term $\mathbf{S}$ the mass continuity, momentum, total energy and thermal energy equations \cite{Hansen2001a, Gombosi1996Three-dimensionalEnvironments}: 
+
+\begin{align}
+    S_\rho & = \dot{\rho} - \alpha \rho \\
+    S_{\rho U_x} & = \left(\dot{\rho} - C_x\right) u_{nx} - \left( C_x + \alpha \right) \rho u_x \\
+    S_{\rho U_y} & = \left(\dot{\rho} - C_x\right) u_{ny} - \left( C_x + \alpha \right) \rho u_y \\
+    S_{\rho U_z} & = -\left( C_x + \alpha \right) \rho u_z \\
+    S_E & = \frac{1}{2} \left( \dot{\rho} + C_x \rho \right) u_n^2 - \frac{1}{2} \rho u^2 \left( C_x - \alpha \right) - \frac{3}{2} \alpha p + \frac{3}{2} C_x p \\
+    S_p & = \frac{1}{2} \left( \dot{\rho} + C_x \rho \right) \left| \mathbf{u} - \mathbf{u}_n\right|^2 - \frac{3}{2} \alpha p 
+\end{align}
+
+Where $C_x = \dot{\rho} - n_n \sigma \left|\mathbf{u} - \mathbf{u}_n\right|$ is the charge exchange rate, $\mathbf{u}_n$ is the Keplerian velocity of the neutral particles orbiting Jupiter, and $\alpha$ is the recombination rate, which is set to 0 in our current work. As described above, the ion production rate in our simulation is a controlled parameter depending on the neutral profile, ionization rate, and collision cross section. In the present work, we set the total ion production rate of $\sim$1 ton/s. Figure 2 shows a contour plot in the meridional plane of the mass loading profile used. It is important to note that our approach of modeling the Io plasma torus is very different from those adopted by the previous Jupiter global MHD models. For instance, the \citeA{Miyoshi1997} MHD model had its inner boundary at 30 R J. The inner boundary of the MHD model by \citeA{Ogino1998a} and \citeA{Fukazawa2005,Fukazawa2006a,Fukazawa2010a} lied at 15 $R_J$, while the \citeA{Moriguchi2008} model had its inner boundary at 8 R J. The recent MHD model by \citeA{Chane2013a,Chane2017a} used an extended ionospheric region spanning from 4.5 to 8.5 $R_J$ and placed the Io torus at an unrealistic location of 10 $R_J$. In their recent model, \citeA{Wang2018ModelingSimulation} also chose to place the Io torus at 10 $R_J$ for the same reasons. Our model is the first global MHD model which models mass loading due to Io in a self‐consistent manner at the right location.
+
+\section{Magnetospheric configuration}
+
+\section{Validation of the MHD model}
