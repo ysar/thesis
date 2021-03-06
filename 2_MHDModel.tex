@@ -18,7 +18,7 @@ Many attempts have been made to model Jupiter's magnetosphere, trending towards 
 \subsection{The BATSRUS MHD model}
 In this work, we use the Block-Adaptive Roe-type Solar wind Tree Upwind Scheme (BATSRUS) magnetohydrodynamic (MHD) solver to model Jupiter's magnetosphere in a self-consistent manner. BATSRUS uses a finite-volume approach and can be used as a component in the larger Space Weather Modeling Framework (SWMF) \cite{Toth2012a}, developed at the University of Michigan, which is a collection of models used in conjunction to simulate various space plasma phenomena. 
 
-Over the years, BATSRUS has developed into an industry standard for simulating the space environment, especially in global magnetohydrodynamic modeling of planetary magnetospheres and has been used to simulate the magnetospheres of Earth \cite{Glocer2013}, Mercury, Saturn \cite{Jia2012} and Jupiter \cite{Hansen2001a}, and also those of exoplanets. In this work, we use BATSRUS to solve the single-fluid, ideal, semi-relativistic MHD equations, repeated below from \citeA{Gombosi2002b} in the conservative form. 
+Over the years, BATSRUS has developed into an industry standard for simulating the space environment, especially in global magnetohydrodynamic modeling of planetary magnetospheres and has been used to simulate the magnetospheres of Earth, Mercury, Saturn \cite{Jia2012} and Jupiter \cite{Hansen2001a}, and also those of exoplanets. In this work, we use BATSRUS to solve the single-fluid, ideal, semi-relativistic MHD equations, repeated below from \citeA{Gombosi2002b} in the conservative form. 
 
 \begin{equation}
     \frac{\partial \mathbf{W}}{\partial t} + \left(\nabla \cdot \mathbf{F} \right)^T = \mathbf{S}
