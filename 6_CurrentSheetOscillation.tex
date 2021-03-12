@@ -1,15 +1,20 @@
-\chapter{Influence of non-axisymmetric planetary field on Jupiter's magnetosphere and current sheet}
+\chapter{Influence of the solar wind on Jupiter's current sheet structure}
 
 \section{Jupiter's oscillating current sheet}
+
+Ionization of Iogenic neutrals adds  $\sim$1 ton/s of mass to the inner magnetosphere of Jupiter, which increases the content of the corotating flux tubes \cite{Bagenal2011b}. Strong centrifugal forces in the equatorial regions of the Jovian magnetosphere radially stretch magnetic flux tubes in the equatorial regions, which leads to the formation of a disk-like current sheet at all longitudes \cite{Khurana2004a} and distorts the magnetic field from the `dipolar' configuration. However, the Jovian current sheet is not static, and its location changes as a function of radial distance and SIII longitude due to various dynamic processes in the Jovian magnetosphere. The first such process which modifies the equatorial current sheet was discussed in Chapter 5, where we discussed the implications of a thin current sheet which is unstable to the tearing instability. The resulting multiple X-line reconnection creates O-lines and flux ropes on the ion-inertial scale, which can coalesce to form large plasmoids; much like what has been seen at the terrestrial magnetopause and magnetotail \cite{AkhavanTafti2020ComparativeEvents, Eastwood2005ObservationsStudy}.
+
+The second mechanism which perturbs the current sheet is related to the changing planetary magnetic field. Early stduies of the Jovian magnetosphere, either through the detection of radio emissions \cite{Carr1969TheJupiter} or in-situ spacecraft flybys \cite{Smith1974The10}, had shown that the internal field of the planet could be better described as a dipole which is tilted with respect to the spin axis. The tilted dipole field rotates at the planetary rotation period, and thus introduces a $\sim$10 hour periodicity in the magnetosphere. Magnetic field observations made by Pioneer 10 \cite{Smith1974The10} clearly show this 10-hour periodicity in the form of a `square-wave' signal in the radial component of the magnetic field. These findings were later confirmed by Pioneer 11 \cite{Smith1975Jupiters11}, Voyager 1 and Voyager 2 \cite{Behannon1981}, Galileo \cite{Khurana1992a, Khurana2005} and the Juno spacecraft. With the introduction of dedicated orbiters, namely Galileo and Juno, more sophisticated models of Jupiter's internal field were developed using spherical harmonics. The VIP4 model was obtained by fitting magnetic field observations from Galileo and uses fourth order harmonics \cite{Connerney1998NewFootprint}, whereas the more recent Juno-based JRM09 field model \cite{Connerney2018} uses the magnetic field data obtained through Juno close perijove passes and uses 10th order harmonics. The models show that the Jovian magnetic field is not dipolar and the higher order harmonics have a substantial contribution near the planet. Figure \ref{fig:JRM09} shows the contours of magnetic field magnitude on the 1 bar surface of Jupiter as per the JRM09 magnetic field model.
+
+Another mechanism which temporarily modified the structure of the current sheet is in the form of perturbations with frequencies smaller than that of the planet's rotation. One such transient perturbation relates to times when multiple current sheet crossings are observed within an interval of roughly 1 to 2 hours. This phenomena is termed as `magnetotail flapping' and is also seen to occur in the terrestrial and Kronian magnetosphere \cite{Volwerk2013ComparativeSaturn}. 
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images6/JRM09_Bmag.png}
-    \caption{Contours of the magnetic field strength (in Gauss) on the 1 bar surface of Jupiter as per the JRM09 magnetic field model \protect\cite{Connerney2018}.}
+    \caption{Contours of the magnetic field strength (in Gauss) on a representative flattened ellipsoid surface of Jupiter as per the JRM09 magnetic field model. The System III longitude system is a left-handed planetocentric coordinate system often used in studies of the Jovian system. In this system, the planetary magnetic field is fixed, and the system rotates about Jupiter's spin axis at its rotation period. 
+    \protect\cite{Connerney2018}.}
     \label{fig:JRM09}
 \end{figure}
-
-by Pioneer 10, Pioneer 11, Voyager 1, Voyager 2, Galileo and Juno
 
 \begin{figure}
     \centering
@@ -18,7 +23,23 @@ by Pioneer 10, Pioneer 11, Voyager 1, Voyager 2, Galileo and Juno
     \label{fig:juno-current-sheet}
 \end{figure}
 
-Many empirical models have been put forward to account for the variation of the Jovian current sheet due to the non-axisymmetric internal field. Each model has a different set of parameters which are varied to minimize the $\chi^2$ error between the modeled current sheet location and that seen in-situ by the relevant spacecraft. Although they can be used to infer the location of the current sheet, these models do not provide any information about its strength. They can be categorized into two classes, which are discussed below. 
+
+
+Many empirical models have been put forward to account for the variation of the Jovian current sheet due to the non-axisymmetric internal field. Each model has a different set of parameters which are varied to minimize the error between the modeled current sheet location and that seen in-situ by the relevant spacecraft. Although they can be used to infer the location of the current sheet, these models do not provide any information about its strength. They can be categorized into two classes, which are discussed in the later sections. 
+
+ After the flybys of Voyager 1 and 2, it was discovered that the current sheet crossings associated with a North-to-South rotation of the field were delayed compared to those associated with a South-to-North rotation of the field. This led to the development of the concept called magnetotail `hinging', which proposed that instead of following the magnetic dipole equator at large radial distances, the maximum  extent of the current sheet was limited to certain heights in the $z$ direction. An example of current sheet hinging is shown in Figure \ref{fig:example-hinging}, where two current sheets are shown with and without the hinging parameter. Based on heuristic arguments that Jupiter's  magnetospheric interaction with the solar wind leads to the formation of a magnetotail, the current sheet models were modified to include the hinging phenomena. It was shown by \cite{Behannon1981} that the inclusion of current sheet hinging decreases the RMS error between the modeled current sheet and the in-situ data. 
+
+In Chapter 4 and 5 we showed that the Jovian magnetosphere, which was previously assumed to be insensitive to changes in the upstream parameters, does respond to changes in the solar wind dynamic pressure and the interplanetary magnetic field in the form of changes to the magnetospheric configuration and strength of currents in the ionosphere. In this chapter, we discuss the influence of the solar wind dynamic pressure on the Jovian current sheet. Specifically, we seek to answer the following questions,
+
+\begin{enumerate}
+    \item Does solar wind dynamic pressure increase or decrease the hinging distance of the current sheet?
+    \item Does solar wind dynamic pressure change the speed at which the current sheet wave propagates outward from the planet?
+    \item What are the differences in the response of a magnetosphere to a forward shock in the solar wind when using an idealized versus a tilted dipole for the internal field?yino3w2 
+\end{enumerate}
+
+% Insert paragraph about the rellationship between the current sheet location and the solar wind dynamics pressure
+
+
 
 \subsection{Axial models}
 Initial models assumed that the Jovian current sheet would be located in a plane corresponding to the magnetic equator of Jupiter, which would rotate at the planetary rotation period. The expected $z$ location of the current sheet at a given radial location in cylindrical coordinates $(\rho, \phi)$ could then be described simply as \cite{VanAllen1974EnergeticJupiter,Goertz1976TheMagnetosphere},
@@ -27,7 +48,7 @@ Initial models assumed that the Jovian current sheet would be located in a plane
     z = -\rho \tan\theta_d \cos\left(\phi - \phi_d\right)
 \end{equation}
 
-Where $\theta_d$ is the tilt of the assumed planetary dipole field with respect to the rotation axis and $\phi_d$ provides the azimuthal location of the magnetic North pole. The rigid tilted plane model was found to be inaccurate at large distances, and the model was modified to limit the $z$ excursions of the current sheet at large radial distances. The first \emph{hinged} current sheet models \cite{Smith1974The10,Hill1974ConfigurationMagnetosphere} simply added a condition to limit these excursions $\rho > a$, where $a$ is the hinging distance and is the only free parameter.
+Where $\theta_d$ is the tilt of the assumed planetary dipole field with respect to the rotation axis and $\phi_d$ provides the azimuthal location of the magnetic North pole. The rigid tilted plane model was found to be inaccurate at large distances, and the model was modified to limit the $z$ excursions of the current sheet at large radial distances. The first \emph{hinged} current sheet models \cite{Smith1974The10,Hill1974ConfigurationMagnetosphere} added a condition to limit these excursions beyond $\rho > a$, where $a$ is the hinging distance and is the only free parameter.
 \begin{equation}
     z = \begin{cases}
     -\rho \tan\theta_d \cos\left(\phi - \phi_d\right), & \text{for } \rho \leq a\\
@@ -69,7 +90,7 @@ Lastly, \citeA{Behannon1981} introduced another axial model which included the e
 \end{equation}
 
 \subsection{Non-axial models}
-Axial models were found to fit the data poorly at large distances in the magnetotail, and it was suggested that the interaction of the magnetosphere with the solar wind may lead to a formation of a magnetotail, where the current sheet would take the form of a rocking plane. The rocking plane model does not accurately represent the current sheet near the planet. \citeA{Behannon1981} suggested a hybrid model which follows the magnetic equator close to the planet and take the form of a rocking plane at large distances (also called the Rocking Plane/Rotating Disk model or RP/RD).
+Axial models were found to fit the data poorly at large distances in the magnetotail, and it was suggested that the interaction of the magnetosphere with the solar wind may lead to a formation of a magnetotail, where the current sheet would take the form of a rocking plane instead of a rotating disk. However, the rocking plane model does not accurately represent the current sheet near the planet. \citeA{Behannon1981} suggested a hybrid model which follows the magnetic equator close to the planet and take the form of a rocking plane at large distances (also called the Rocking Plane/Rotating Disk model or RP/RD).
 
 \begin{equation}
     \phi' = \phi_d - \frac{\Omega \left(x - a\right)}{U}
@@ -78,7 +99,7 @@ Axial models were found to fit the data poorly at large distances in the magneto
     z = x \sech \left( \frac{x}{a} \right) \cos\left(\phi - \phi' \right) + y \sin\left(\phi - \phi' \right)  
 \end{equation}
 
-Note that the above model follows a rotating disk near the planet where $\phi'=\phi_d$. The wave starts propagating at distance $a$ at a fixed speed $U$, which are the two parameters for this model. \citeA{Khurana1992ASheet} extend the previous models by prescribing a variation in the wave propagation speed with radial distance as follows,
+Note that the above model follows a rotating disk near the planet where $\phi'=\phi_d$. The wave starts propagating at distance $a$ at a fixed speed $U$, which are the two parameters for this model. \citeA{Khurana1992a} extend the previous models by prescribing a variation in the wave propagation speed with radial distance as follows,
 
 \begin{equation}
     v(\rho) = v_0 \coth \left(\frac{\rho}{\rho_0} \right)
@@ -91,7 +112,7 @@ which leads to the following expressions for the phase delay and the current she
     z = -\rho \tan\theta_d \cdot \frac{x_0}{x} \tanh\left(\frac{x}{x_0} \right) \cos\left( \phi - \phi'\right) 
     \label{eqn:khurana1992}
 \end{equation}
-The \citeA{Khurana1992ASheet} model has three parameters $(v_0, \rho_0, x_0)$ representing the asymptotic wave propagation speed, radial location of outflow, and the hinging point along the X-axis. \citeA{Khurana2005} updated the model to account for local time asymmetries and solar wind angle of attack, but the generalization increases the number of parameters in the model. 
+The \citeA{Khurana1992a} model has three parameters $(v_0, \rho_0, x_0)$ representing the asymptotic wave propagation speed, radial location of outflow, and the hinging point along the X-axis to account for the interaction with the solar wind. \citeA{Khurana2005} updated the model to account for local time asymmetries and solar wind angle of attack, but the generalization increases the number of parameters in the model. 
 
 \begin{figure}
     \centering
@@ -100,17 +121,37 @@ The \citeA{Khurana1992ASheet} model has three parameters $(v_0, \rho_0, x_0)$ re
     \label{fig:example-hinging}
 \end{figure}
 
-\section{MHD simulations with a tilted dipole}
+\section{Methodology}
+
+\subsection{MHD simulations with a tilted dipole}
 To simulate the modulation of the Jovian current sheet, we modify the internal magnetic field of Jupiter to take the form of a dipole tilted 10$^\circ$ with respect to the spin axis and rotates around it at the planetary rotation period (10 hours). The simulations are performed in the GSE coordinate system. One change between the existing model and one described in Chapter 2 is the use of a cartesian grid instead of a spherical grid to avoid the ``pole-problem''. 
 
-\section{Estimating the current sheet parameters within the MHD model}
+Different upstream conditions are introduced to evaluate the response of the current sheet to varying solar wind dynamic pressure. The properties of the solar wind used for the three runs are tabulated in Table \ref{tab:sw-conditions-chp6}.
+
+\begin{table}
+    \centering
+    \begin{tabular}{c|c|c|c|c|c}
+
+    Run  &$B$  &$u$  &$\rho$     &$T$  &$p_d$\\
+         &nT   &km/s &amu/cm$^3$ &K    &nPa\\
+    \hline
+    1    &0.31  &322.04  &0.062  &4.3E2  &0.011\\
+    2    &1.00  &400.00  &0.200  &2.0E5  &0.053\\
+    3    &2.82  &532.46  &0.564  &8.8E5  &0.267\\
+
+    \end{tabular}
+    \caption{Solar wind magnetic field strength, speed, density, temperature and dynamic pressure used in the present study. The variables are prescribed at the upstream boundary of the simulation at $X=192$ $R_J$. The interplanetary magnetic field is oriented along the negative $Z$ direction.}
+    \label{tab:sw-conditions-chp6}
+\end{table}
+
+\subsection{Estimating the current sheet parameters within the MHD model}
 As shown in Figure FIGURE, the current sheet location in our model varies with radial distance and dipole phase. A direct comparison between the current sheet location in the MHD model and the various empirical functions shows a poor fit, as small differences in phase can lead to large differences in the final current sheet location. Moreover, the empirical models have been observed to perform well only for the in-situ data to which they were originally fitted. For a more accurate comparison, we use the functional form for the various empirical models to find the set of parameters e.g. hinging distance, wave propagation speed, etc. which reproduce best the output seen in the MHD simulations.
 
 We consider three models with relatively simple functional forms,
 \begin{enumerate}
     \item The \citeA{Kivelson1978ASheet} model described by Equation \ref{eqn:kivelson1978} with two parameters - $U$ and $\rho_0$.
     \item The \citeA{Behannon1981} model described by Equation \ref{eqn:behannon1981} with two parameters - $U$ and $a_0$.
-    \item The \citeA{Khurana1992ASheet} model described by Equation \ref{eqn:khurana1992} with three parameters - $v_0$, $x_0$ and $\rho_0$.
+    \item The \citeA{Khurana1992a} model described by Equation \ref{eqn:khurana1992} with three parameters - $v_0$, $x_0$ and $\rho_0$.
 \end{enumerate}
 
 The location of the current sheet is extracted in the noon-midnight meridian (00 LT) by identifying the locus of points located between $x=[-100, -4] R_J$ and $z=[-30, 30] R_J$ where  $B_r=0$. A current sheet model is then fitted to the extracted current sheet height $z_\text{MHD}$ at a given radial location $\rho$ by finding the set of parameters $\boldsymbol\theta$ that minimizes the square of the residual $\mathcal{R}$,
@@ -132,6 +173,10 @@ Figure \ref{fig:example-fitcurrentsheet} shows the result of fitting the \citeA{
 
 \section{Variation of current sheet parameters with solar wind dynamic pressure}
 
+We investigate the response of the current sheet parameters to the solar wind dynamic pressure by introducing three different upstream cases which are described in Table 1. 
+
+\subsection{The Kivelson et al. (1978) form}
+
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images6/comparison_highdynP_kivelson.png}
@@ -139,6 +184,14 @@ Figure \ref{fig:example-fitcurrentsheet} shows the result of fitting the \citeA{
     \label{fig:comparison-hist-kivelson}
 \end{figure}
 
+Fitting Equation \ref{eqn:kivelson1978} to the current sheet extracted from the simulation yield two parameters - the wave propagation speed $U$ and the radial location where wave propagation begins $\rho_0$. The parameters which fit best the simulation results are plotted in a histogram in Figure 
+\ref{fig:comparison-hist-kivelson} for the three dynamic pressures. The number of simulation times for which a good fit is obtained varies for the different runs. For a meaningful comparison, we normalize the histogram such that the area under each histogram sums to unity. 
+
+The histograms for the wave propagation speed show a considerable spread of possible values, ranging from $\sim$10 $R_J$/hour to $\sim60 R_J$/hour, though the distribution is skewed to lower values. With increasing dynamic pressure, the skew in the distribution shifts more to lower values, indicating that the wave propagation speed is lower during intervals when the solar wind dynamic pressure is high. 
+
+On the other hand, the distribution of $\rho_0$ in the MHD model overwhelmingly favours low values of $\rho_0$ and is insensitive to change in the solar wind dynamic pressure. Low $\rho_0$ values imply that the current sheet wave begins propagating at a finite speed very close to the planet. 
+
+\subsection{The Behannon et al. (1981) form}
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images6/comparison_highdynP_behannon.png}
@@ -146,6 +199,12 @@ Figure \ref{fig:example-fitcurrentsheet} shows the result of fitting the \citeA{
     \label{fig:comparison-hist-behannon}
 \end{figure}
 
+This model described by Equation \ref{eqn:behannon1981} contains two parameters - the wave propagation speed $U$ and the distance $a_0$ beyond which the current sheet is \emph{hinged}, i.e. its maximum extent in the $z$ direction is limited. As before, we show the normalized histograms of these parameters in Figure \ref{fig:comparison-hist-behannon}. 
+
+Similar to the result obtained when using the \citeA{Kivelson1978ASheet} form, the speed of the current sheet wave varies between 15 to 50 $R_J$/hour. For lower solar wind dynamic pressure (0.010 nPa), the mean of the distribution is located at 30 $R_J$/hour and shift to lower values for higher solar wind dynamic pressure. This result is consistent with the previous model and supports the conclusion that increasing solar wind dynamic pressure slows the propagation of the current sheet wave. 
+
+The hinging parameter $a_0$ also exhibits large variations, with most values ranging between 0 to 100 $R_J$. The mean $a_0$ is seen to be anti-correlated with solar wind dynamic pressure. 
+ 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{images6/comparison_highdynP_khurana.png}
