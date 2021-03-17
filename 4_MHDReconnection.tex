@@ -1,6 +1,25 @@
 \chapter{Magnetic Reconnection in the Jupiter MHD model}
 
 \section{Introduction}
+The terrestrial magnetosphere is sensitive to changes in the solar wind and interplanetary magnetic field \cite{Sibeck1991SolarMotion,McPherron2008ResponseWind}. Solar wind dynamic pressure can increase the magnetic stresses in the magnetotail which increases the frequency of magnetospheric substorms \cite{Kokubun1977TriggeringDiscontinuities,Newell2011SolarTriggering,Newell2016SubstormSpeed}. Coronal mass ejections, which travel through the interplanetary medium as a traveling shock followed by a dense region of plasma, are also associated with loop like magnetic fields which can reconnect with the planetary field at the magnetopause. Dayside reconnection creates more open flux in the magnetosphere, which is closed via reconnection in the magnetotail in the form of far X-line reconnection or via explosive release of magnetic energy via substorms. The cycle of opening and closing of magnetic flux (Dungey cycle), is a crucial feature of the terrestrial magnetosphere and high-latitude ionosphere, as discussed in Chapter 1.
+
+However, considerable debate exists in the community regarding the importance of dayside magnetic reconnection in Jupiter's magnetosphere. Unlike the terrestrial magnetosphere, the strong internal magnetic field and presence of internal sources of plasma lead to a very different magnetospheric configuration. Although the theoretical models claim that reconnection occurs in the Jovian magnetotail
+
+One argument made against dayside magnetic reconnection highlights the improbable timescales for the Dungey cycle. At Earth, a newly reconnected field line on the dayside, which is frozen-in to the solar wind plasma at its other end, is transported tailward at the solar wind speed of $\sim400$ km/s. Hence, it will take approximately $\sim$300 s or 5 minutes to travel a distance of $\sim20 R_E$ (1 $R_E$ = 6378 km is the radius of the Earth). On the other hand, at Jupiter, a field line opened on the dayside magnetopause would have to travel a distance of $\sim200 R_J$ to reach the magnetotail, which would take  $\sim10$ hours, comparable to the rotation period for Jupiter. Moreover, field lines which have reached the magnetotail may take an even longer time to diffuse towards the equatorial regions where tail reconnection is likely to occur \cite{McComas2007}. 
+
+The two commonly used counter-arguments propose that Dungey cycle timescales may be considerably shorter. This could be possible if the flux circulation occurs in a localized region on the dusk side instead of over the entire magnetosphere like at Earth. Moreover, another hypothesis is that it is not necessary for the field line to fully diffuse toward the equator, as plasmoid release due to the Vasyliunas cycle may also induce reconnection to spread to the open tail lobes \cite{Cowley2008}. 
+
+In-situ observations have shown that magnetic reconnection occurs in the Jovian magnetotail and produces plasmoids. However, single-point measurements cannot help in determining the physical processes which led reconnection to occur. 
+
+Finally, this work is also motivated by observations made by the Hubble Space Telescope of Jupiter's polar regions. The polar UV aurorae are highly dynamic, and vary on timescales much shorter than the main oval. Whether these polar regions of the planet connect to distance regions in the Jovian magnetotail via closed field lines, or to the solar wind via open field lines, remains an open question. 
+
+In this work, we simulate the Jovian magnetosphere using our MHD model to answer the following questions,
+
+\begin{enumerate}
+    \item Does magnetic reconnection occur on the dayside magnetopause at Jupiter and create open flux in the magnetosphere?
+    \item Does Jupiter have a persistent polar cap of open field lines? 
+    \item If so, where and how does flux closure occur in the magnetosphere?
+\end{enumerate}
 
 \section{Reconnection on the dayside for Parker-spiral IMF}
 

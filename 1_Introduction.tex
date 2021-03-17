@@ -2,11 +2,92 @@
 % ------------------------------------------------------------------
 \chapter{Introduction}
 
-\section{Magnetic reconnection}
-Magnetic reconnection is a process which occurs predominantly between regions with oppositely directed magnetic fields, or large magnetic shear. It re-configures the magnetic field and transfers the magnetic energy in the stressed configuration to the particles. Magnetic reconnection is an important ubiquitous phenomena in space plasmas. It is seen to occur on the surface of the sun and in magnetospheres of magnetized planets such as that of the Earth, Mercury, Jupiter, Saturn, Uranus but also in the case of un-magnetized planets such as Venus and Mars. In the terrestrial magnetosphere, magnetic reconnection occurs at the dayside 
+\section{Fundamentals}
+
+\subsection{The MHD approximation}
+
+The Ohm's law for ideal MHD provides the electric field $\mathbf{E}$ as,
+\begin{equation}
+    \mathbf{E} = -\mathbf{v} \times \mathbf{B}
+\end{equation}
+
+Which states that the electric field perceived by the moving plasma in the frame of reference moving with velocity $\mathbf{v}$ in a background magnetic field $\mathbf{B}$ is zero. Ultimately, this implies the magnetic flux through a surface 
+
+\begin{equation}
+    \oint_V \frac{\partial \mathbf{B}}{\partial t} \,dV
+\end{equation}
+
+\subsection{Magnetic reconnection}
+Magnetic reconnection is a process by which two regions with sufficiently sheared magnetic fields merge and transfer the energy associated with magnetic stresses into the kinetic energy of the surrounding plasma \cite{Priest2000MagneticReconnection,Yamada2010MagneticReconnection}. A simplistic analogy often used to describe magnetic reconnection is the `disconnection' and \emph{re}-connection of two magnetic field lines which are oppositely directed to each other \cite{Gonzalez2016FundamentalReconnection}. Such breakage of magnetic field lines would violate the frozen-in flux condition, and thus, magnetic reconnection is a non-ideal phenomena which requires finite resistivity to occur. 
+
+Figure <> shows a schematic of the region where two regions with anti-parallel magnetic fields merge and reconnect. Magnetic field lines diffuse towards the center of the region, called the `X-line', via the inflow region and are expelled at large velocities away from the X-line in the outflow regions. Various theories have been put forward to explain and model the steady reconnection process, to explain the different rates of observed reconnection (see for e.g. \citeNP{Yamada2010MagneticReconnection} and references therein). In particular, we will discuss the two-fluid model of reconnection. 
+
+In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary motivation of the MMS spacecraft constellation. 
+
+The model shown in Figure <> represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that steady reconnection rarely occurred. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
+
+Magnetic reconnection is a fundamental and ubiquitous process in space plasmas and occurs in most regions of the space environment, from the solar corona to the various planetary magnetospheres, to the heliopause. The implications of magnetic reconnection on the magnetospheres of Earth and Jupiter, and the differences between the two, are discussed in subsequent sections.
+
+
+\section{Earth's magnetosphere}
+A brief description of the processes occurring in the terrestrial magnetosphere is provided in this section to better understand the similarities and differences between it and the Jovian magnetosphere.
+
+\subsection{The solar wind and interplanetary magnetic field}
+The solar wind is a stream of particles accompanied by the interplanetary magnetic field (IMF), which flows outward from the sun. It originates from the lower regions of the solar corona, expands and accelerates until it gains a speed roughly between 400 to 600 km/s, by which time it is usually supersonic and super-Alfvenic \cite{Gombosi1998PhysicsEnvironment}. It is composed primarily of protons with an average temperature on the order of $10^5$ K and density of $\sim$7 cm$^{-3}$, though other species and charge states are also prevalent.
+
+It was hypothesized that the radial flow of solar wind plasma distorts the frozen-in interplanetary magnetic field into a spiral configuration with increasing distance from the sun \cite{Parker1958DynamicsFields.,Ness1964SolarField} (see Figure \ref{fig:parker-spiral}). This may be a reasonable assumption during quiet intervals, but the solar wind and IMF can be highly dynamic, leading to the formation of corotating-interaction-regions (CIRs) and coronal-mass-ejections (CMEs). These can be associated with drastic changes in the solar wind dynamic pressure and orientation of the IMF, which perturbs the terrestrial magnetosphere in various ways \cite{Borovsky2006DifferencesStorms,Denton2006GeomagneticWind}. 
+
+Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines which intersect the orbits of Earth and Jupiter at 1 AU and 5.2 AU (1 AU = 1.49E11 km) respectively. The Parker-spiral IMF at Earth possess a large $\mathbf{r}$ component (where $\mathbf{r}$ is the Sun-Earth direction, also the direction of solar wind flow). On the other hand, the IMF is almost fully azimuthal by the time it reaches Jupiter's orbit.
+
+\begin{figure}
+    \centering
+    \includegraphics{images1/parker-spiral.png}
+    \caption{Interplanetary magnetic field lines showing the Parker-spiral in the ecliptic plane. The field lines intersect at the orbits of Earth and Jupiter at 1 AU and 5.2 AU respectively and the tangent to the curve is highlighted via arrows.}
+    \label{fig:parker-spiral}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics{images1/heliospheric-currentsheet.png}
+    \caption{Wavy structure of the heliospheric current sheet assuming a 400 km/s solar wind flow.}
+    \label{fig:heliospheric-current-sheet}
+\end{figure}
+
+
+Also associated with the radial outflow of the solar wind is the heliospheric current sheet. Since the solar magnetic axis is not aligned with its spin axis, the heliospheric current sheet oscillates about a mean position (Figure \ref{fig:heliospheric-current-sheet}). At Earth, this can be seen in the North-South ($Z$) component of the IMF. Periods when the IMF is southward, and thus oppositely directed to the planetary field at the dayside boundaries of the magnetosphere, are considered to lead to increased geomagnetic activity due to magnetic reconnection (discussed in later sections). 
+
+\subsection{Configuration of the terrestrial magnetosphere}
+The interaction between the solar wind and interplanetary magnetic field with the internal magnetic field of the Earth forms the magnetosphere. Since the incoming plasma is supersonic and super-Alfvenic, a bow shock is created at the interaction front. Downstream of the shock lies a region of shocked high-temperature solar wind called the magnetosheath. The magnetic field strength in the magnetosheath is larger than in the solar wind, but the field lines are still `open', i.e. they are connected at both ends to the interplanetary magnetic field. Separating the planetary field from the magnetosheath is a discontinuity called the magnetopause. The magnetopause is a current layer that shields the magnetosphere from the external inputs.
+
+On the nightside, the interaction of the tail magnetic field with the solar wind and IMF creates a magnetotail. Magnetic field lines in the magnetotail are considered to be primarily in the plane of the solar wind flow. Present between oppositely directed magnetic field lines in the northern and southern magnetotail lobes is the magnetospheric tail current sheet, which is surrounded by a region of high-density plasma called the plasmasheet. 
+
+In the inner regions of the magnetosphere are the planet's radiation belts - regions of trapped high-energy particles undergoing repeated bounce motions. In these regions the current sheet is weak or non-existent and the magnetic field is close to being dipolar. Co-located with the radiation belts is the plasmasphere, composed of relatively low-energy particles (ions and electrons) which are undergoing the $\mathbf{E}\times\mathbf{B}$ drift in the planetary field.
+
+\subsection{Magnetic reconnection in the terrestrial magnetosphere}
+In the context of the terrestrial magnetosphere, magnetic reconnection is usually studied in two regions. The first region is the dayside magnetopause, where high density plasma of the magnetosheath associated with a strong magnetic field interacts with the relatively low density plasma of the magnetosphere, associated with weaker magnetic fields. Magnetic reconnection has been observed to occur at all orientations of the IMF (clock angle), but is most prominent when the IMF is pointing southward, as in this situation the magnetic shear between it and the northward pointing magnetospheric field (at the magnetopause) is maximized. In such a case, `open' field lines in the solar wind reconnect with `closed' field lines of the magnetosphere, and produce newly opened field lines which are transported away from the reconnection site by the reconnection outflow.
+
+The second region where reconnection is studied widely is the terrestrial magnetotail. Magnetic field lines in the northern and southern magnetotail lobes which are separated by the magnetotail current sheet are often directed oppositely to one another. Two such open field lines in the magnetotail may spontaneously reconnect and convert into a single closed field line. More often, magnetic reconnection is observed to occur near the planet, where field lines may still be closed, and is preceded by a thinning of the magnetotail current sheet, and results in an explosive reconnection event called a \emph{substorm}. 
+
+\subsection{Ionosphere}
+Neutral species in Earth's upper atmosphere are photo-ionized, and the relatively low-densities at higher altitudes lead to longer collision time scales which supports a persistent region of charged particles called the ionosphere. Being full of ions and electrons, the highly conducting ionosphere is intricately connected with the magnetosphere.
+
+Ionospheric plasma at mid- to low-latitudes corotates with the planet due to collisions with the corotating thermospheric neutrals. The magnetic field lines associated with these regions are connected at both ends with the planet (i.e. they are \emph{closed}) and have an equatorial footprint in the magnetosphere at a distance of a few Earth radii. Since the field lines in ideal MHD can be considered to possess the same electrostatic potential, the corotation velocity of the ionospheric plasma is transmitted to the associated magnetic flux tube in the magnetosphere. This creates a corotating region of low-energy plasma called the plasmasphere. This picture is consistent with the argument that the plasmasphere is a result of $\mathbf{E}\times\mathbf{B}$ drift, where $\mathbf{E}=-\nabla \Phi$ can be considered to be the corotation electric field. Thus, the ionosphere plays a crucial role in maintaining the corotation at Earth. 
+
+At higher latitudes, magnetic field lines are open, i.e. they are connected at one end with the interplanetary magnetic field. In such a case, the ionosphere plays a more responsive role to changes in the solar wind and distant magnetosphere. 
+
+Field aligned currents from the magnetosphere close through perpendicular (to $\mathbf{B}$) currents in the ionosphere. 
+
+
+
+
+
+
+\subsection{Magnetosphere-ionosphere coupling}
+
 
 \section{Jupiter's magnetosphere}
-The interaction of Jupiter's internal magnetic field with the solar wind and interplanetary magnetic field creates its magnetosphere. Jupiter's internal field is the strongest out of all magnetized planets in the solar system, which contributes to the large size for the magnetosphere. Much like at 1 AU, the solar wind is both supersonic and super-Alfvenic at Jupiter's orbit, leading to the formation of a strong bow shock on the dayside. Downstream of the shock lies a region of heated solar wind called the magnetosheath, which is separated from the magnetosphere by another discontinuity called the magnetopause. The magnetopause is a current layer that serves as the boundary separating the magnetic field lines of the interplanetary magnetic field from those connected with the planet. 
+
 
 \subsection{The inner magnetosphere (\texorpdfstring{$r < 15 R_J$)}{r<15}}
 The large natural satellites of the gas giants greatly contribute to plasma dynamics in their magnetospheres. At Jupiter, the largest moons in increasing order of radial distance from the planet are Io, Europa and Ganymede. Out of these, Io and Europa and considered to be un-magnetized, but interact with the surrounding magnetospheric plasma due to the resistive effects of subsurface magma and saline oceans respectively. Ganymede is the only known natural satellite in the solar system which possess a strong internal magnetic field, which interacts with the Jovian magnetic field to create its own magnetosphere. 
@@ -31,8 +112,10 @@ In-situ observations by Galileo and Juno have shown that plasmoids are created i
 
 
 \section{Solar wind conditions at Jupiter}
+
 \section{Jupiter's UV aurora}
-\section{Jupiter's internal magnetic field}
+
+\section{Objectives of this study}d
 
 % \section{Open questions}
 % \subsection{Variability of the Jovian UV aurora: Effect of solar wind dynamic pressure?}

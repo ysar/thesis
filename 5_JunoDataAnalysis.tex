@@ -40,6 +40,7 @@ Recently, \citeA{RosaOliveira2020NewClouds} have put forward a new metric to ver
 
 \begin{equation}
     P = 100 \times \frac{\left(\sqrt{\lambda_N} - \sqrt{\lambda_M} \right) \left(\sqrt{\lambda_M} - \sqrt{\lambda_L} \right) \left(\sqrt{\lambda_N} - \sqrt{\lambda_L} \right) }{\sqrt{\lambda_N^3}}
+    \label{eqn:mva-p}
 \end{equation}
 
 \subsection{Force-free flux rope fitting}
@@ -59,9 +60,19 @@ Where $B_A$ and $B_T$ are the axial and tangential field components, $B_0$ is th
 Where $B_m$ is the modeled field and N is the number of data points in the reconstruction. The intermediate direction provided by MVA is used as the initial guess for the orientation of the flux rope  and the minimization is performed in two steps - first using a unit normalized magnetic field with $B_0=1$ nT and then with $B_0$ as a variable parameter to fit the core field strength. A non-linear least squares optimization method is used to fit the different parameters. 
 
 \subsection{Automated detection of flux ropes / O-lines}
+We use an algorithm which detects possible flux ropes and O-line based on the magnetic field signatures to construct a list of such events and study their properties, such as, frequency and region of occurrence and their duration, which provides an estimate of the size of the plasmoid signature. The algorithm is described below. 
+
+In a given magnetometer data file, which typically contains data for the entire day (UTC), we first identify all times corresponding to a reversal in $B_\theta$, either from positive to negative values or vice versa. Out of the selected crossings, those which occur beyond $r=100 R_J$ and local time less than 05 LT are discarded to prevent contamination due to the magnetopause, where the variability in the magnetic field is quite large. Then, for each $B_\theta$ reversal ($t_\text{0}$), the corresponding start ($t_s$) and stop ($t_e$) times are inferred using the algorithm used by \citeA{Smith2017AutomatedIdentification}. This is achieved by identifying all local extrema in $B_\theta$ near $t_0$ within a particular window size ($\delta t_w$) and finding the maxima-minima (or minima-maxima) pair that when interpolated using a linear function, maximizes the coefficient of determination \cite{Smith2017AutomatedIdentification}.
+
+In order to select changes in the field which are prominent with respect to the background conditions, we discard all those events where the change in $B_\theta$ is less than 2 nT, or less than the standard deviation of the field for a duration of +/- 5 times the window size, i.e. where $\Delta B_\theta = |B_\theta(t_e) - B_\theta(t_s)| < 5\sigma ( B_\theta(\delta t_w))$ or $\Delta B_\theta < 2$ nT. To further improve the quality of selected events, we also discard those times where the excursion in the positive values exceeds that in the negative values by a factor of 2 or more (and vice versa). 
+
+The event list is further refined based on the minimum variance analysis. The unit eigenvector of the variance matrix which provides the direction of maximum change in the field ($\mathbf{x}_N$) must have a $z$-component larger than $0.8$. The ratio of the the eigenvalues corresponding to the minimum, intermediate and maximum directions must be larger than 3, i.e. $\lambda_N / \lambda_M > 3$ and $\lambda_M / \lambda_L > 3$. The $P$ parameter (described by Equation \ref{eqn:mva-p}) must be larger than $4.5$. 
+
+We also specify a condition that the component of the magnetic field showing the least variation ($B_L$) be less than 2 nT, to only capture those events which pass through the center of the plasmoid structure. Similarly, we place a similar limit on $B_r$, which should be less than 3 nT, to prevent contamination due to any process in the magnetotail lobes. The latter condition implies that we only identify events which occur close to the magnetotail current sheet.
 
 
-\section{Case studies}
+
+\section{Results - Case studies}
 \subsection{Event 1 — Flux Rope DOY 236 2017}
 
 \begin{figure}
@@ -113,11 +124,17 @@ Multiple alternating $B_\theta$ reversals, with peak‐to‐peak durations of ro
 
 Both events are observed in the dawnside magnetotail, where plasma density is relatively low and the Dungey‐cycle flux closure is expected to occur \cite{Cowley2003b}. However, without context of the global magnetosphere, it is not possible to determine whether the reconnection events discussed here were a product of the Dungey or Vasyliunas cycles. Note that both Dungey and Vasyliunas cycle plasmoid release can be initiated by reconnection initially within closed field lines, as proposed by theoretical models \cite{Cowley2008} and seen in global simulations \cite{Sarkango2019}.
 
-\section{Survey of flux ropes and O-lines}
+\section{Results - Survey of flux ropes and O-lines}
 
-\section{Discussion}
+\subsection{Duration and scale of plasmoid events}
 
-\section{Conclusions}
+\subsection{Flux ropes versus O-lines}
+
+\subsection{Discussion - Survey}
+
+\subsection{Simultaneous observations from JEDI}
+
+\section{Summary}
 
 Despite differences in magnetospheric dynamics, reconnection occurs in the Jovian magnetotail and releases plasmoids, much like at Earth and Mercury. However, unlike at the terrestrial‐like planets, where plasmoids (or O‐lines) and flux ropes are observed in various sizes, with some at or below the ion inertial length, Jovian plasmoids and flux ropes were observed to be fairly large, with diameters of several RJ (or an order of magnitude larger than the local ion inertial length) or an in situ magnetic signature that is seen to last 6 min on average (Vogt et al., 2014). Potential ion‐scale structures, however, could not have been detected by the Galileo magnetometer, owing to its low temporal resolution of several seconds per vector.
 
