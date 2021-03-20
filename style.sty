@@ -1,6 +1,6 @@
 
-\usepackage[margin=0.5in]{geometry}
-% \usepackage[margin=1.0in]{geometry}
+% \usepackage[margin=0.5in]{geometry}
+\usepackage[margin=1.0in]{geometry}
 
 \usepackage[utf8]{inputenc}
 
@@ -28,8 +28,120 @@
 \usepackage{apacite}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{setspace}
 
-% \renewcommand{\baselinestretch}{1.5}
+
+\renewcommand{\baselinestretch}{1.5}
 
 
 \DeclareMathOperator{\sech}{sech}
+
+\pagestyle{plain}
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\bfseries\LARGE\filcenter}
+{\bfseries\chaptertitlename \;\thechapter}
+{1pc}
+{
+\vspace{1pc}
+\Huge}
+%
+% TITLE PAGE  -------------------------------------------------
+\def\titlepage{
+    
+    \hbox{\vspace{1.2in}}
+    \begin{center}
+    \onehalfspacing
+    
+    
+    {\Large \bf Dynamics of the Jovian magnetosphere: Combining insight from MHD simulations and in-situ measurements from the Juno spacecraft}
+    
+    \vspace{0.5in}
+    by 
+    \vspace{0.5in}
+    
+    Yash Sarkango
+    \vspace{0.5in}
+    
+    {
+    \singlespacing
+    A dissertation submitted in partial fulfillment\\
+    of the requirements for the degree of\\
+    Doctor of Philosophy\\
+    (Climate and Space Sciences and Engineering)\\
+    in The University of Michigan\\
+    2021
+    }
+        
+    \end{center}
+    
+    \vspace{0.5in}
+    Doctoral Committee:
+    
+    \hspace{1in}Associate Professor Xianzhe Jia, Chair
+    
+    \hspace{1in}Professor James A. Slavin
+    
+    \hspace{1in}Professor Gabor Toth
+
+    \hspace{1in}Professor Mark J. Kushner
+
+    \thispagestyle{empty}
+}
+
+% COPYRIGHT -------------------------------------------------
+\def\copyrightpage{
+    \clearpage
+    \thispagestyle{empty}
+    
+    \hbox{}
+    \vfill
+    
+    \begin{center}
+    \begin{onehalfspacing}
+      Yash Sarkango \\
+      \href{mailto:sarkango@umich.edu}{sarkango@umich.edu} \\
+      ORCID iD: \href{http://orcid.org/0000-0001-7812-7464}{0000-0001-7812-7464}\\
+      \vspace{0.3in}
+      \copyright\;Yash Sarkango 2021
+    \end{onehalfspacing}
+    \end{center}
+    
+    \vfill
+    \hbox{}
+}
+
+% DEDICATION --------------------------------------------------
+\def\dedicationpage{
+    
+    \chapter{Dedication}{
+        \pagenumbering{roman}
+        \setcounter{page}{2}
+        % \pagestyle{plain}
+        Insert dedication here.}
+
+}
+
+% ACKNOWLEDGEMENTS -------------------------------------------
+\def\acknowledgementspage{
+    
+    \include{acknowledgements}
+}
+
+% ABSTRACT ---------------------------------------------------
+\def\abstractpage{
+    \include{abstract}
+}
+
+% LIST OF TABLES ---------------------------------------------
+\def\makelistoftables{
+    \addcontentsline{toc}{chapter}{List of Tables}
+    \listoftables
+}   
+
+% LIST OF FIGURES --------------------------------------------
+\def\makelistoffigures{
+    \addcontentsline{toc}{chapter}{List of Figures}
+    \listoffigures
+}   
