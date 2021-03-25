@@ -4,7 +4,9 @@
 
 \section{Fundamentals}
 
+
 \subsection{The MHD approximation}
+
 
 The Ohm's law for ideal MHD provides the electric field $\mathbf{E}$ as,
 \begin{equation}
@@ -24,7 +26,7 @@ Figure <> shows a schematic of the region where two regions with anti-parallel m
 
 In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary motivation of the MMS spacecraft constellation. 
 
-The model shown in Figure <> represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that steady reconnection rarely occurred. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
+The model shown in Figure <> represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that this is not necessarily the case. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
 
 Magnetic reconnection is a fundamental and ubiquitous process in space plasmas and occurs in most regions of the space environment, from the solar corona to the various planetary magnetospheres, to the heliopause. The implications of magnetic reconnection on the magnetospheres of Earth and Jupiter, and the differences between the two, are discussed in subsequent sections.
 
@@ -33,11 +35,11 @@ Magnetic reconnection is a fundamental and ubiquitous process in space plasmas a
 A brief description of the processes occurring in the terrestrial magnetosphere is provided in this section to better understand the similarities and differences between it and the Jovian magnetosphere.
 
 \subsection{The solar wind and interplanetary magnetic field}
-The solar wind is a stream of particles accompanied by the interplanetary magnetic field (IMF), which flows outward from the sun. It originates from the lower regions of the solar corona, expands and accelerates until it gains a speed roughly between 400 to 600 km/s, by which time it is usually supersonic and super-Alfvenic \cite{Gombosi1998PhysicsEnvironment}. It is composed primarily of protons with an average temperature on the order of $10^5$ K and density of $\sim$7 cm$^{-3}$, though other species and charge states are also prevalent.
+The solar wind is a stream of particles accompanied by the interplanetary magnetic field (IMF), which flows outward from the sun. It originates from the lower regions of the solar corona, expands and accelerates until it gains a speed roughly between 400 to 600 km/s, by which time it is usually supersonic and super-Alfvenic \cite{Gombosi1998PhysicsEnvironment}. It is composed primarily of protons with an average temperature on the order of $10^5$ K and density of $\sim$7 cm$^{-3}$ (at 1 AU = $1.49 \times 10^{11}$ km), though other species and charge states are also prevalent.
 
 It was hypothesized that the radial flow of solar wind plasma distorts the frozen-in interplanetary magnetic field into a spiral configuration with increasing distance from the sun \cite{Parker1958DynamicsFields.,Ness1964SolarField} (see Figure \ref{fig:parker-spiral}). This may be a reasonable assumption during quiet intervals, but the solar wind and IMF can be highly dynamic, leading to the formation of corotating-interaction-regions (CIRs) and coronal-mass-ejections (CMEs). These can be associated with drastic changes in the solar wind dynamic pressure and orientation of the IMF, which perturbs the terrestrial magnetosphere in various ways \cite{Borovsky2006DifferencesStorms,Denton2006GeomagneticWind}. 
 
-Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines which intersect the orbits of Earth and Jupiter at 1 AU and 5.2 AU (1 AU = 1.49E11 km) respectively. The Parker-spiral IMF at Earth possess a large $\mathbf{r}$ component (where $\mathbf{r}$ is the Sun-Earth direction, also the direction of solar wind flow). On the other hand, the IMF is almost fully azimuthal by the time it reaches Jupiter's orbit.
+Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines which intersect the orbits of Earth and Jupiter at 1 AU and 5.2 AU respectively. The Parker-spiral IMF at Earth possess a large $\mathbf{r}$ component (where $\mathbf{r}$ is the Sun-Earth direction, also the direction of solar wind flow). On the other hand, the IMF is almost fully azimuthal by the time it reaches Jupiter's orbit.
 
 \begin{figure}
     \centering
@@ -50,12 +52,12 @@ Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines whi
 \begin{figure}
     \centering
     \includegraphics{images1/heliospheric-currentsheet.png}
-    \caption{Wavy structure of the heliospheric current sheet assuming a 400 km/s solar wind flow.}
+    \caption{Wavy structure of the heliospheric current sheet assuming a constant 400 km/s solar wind flow and a dipole magnetic field.}
     \label{fig:heliospheric-current-sheet}
 \end{figure}
 
 
-Also associated with the radial outflow of the solar wind is the heliospheric current sheet. Since the solar magnetic axis is not aligned with its spin axis, the heliospheric current sheet oscillates about a mean position (Figure \ref{fig:heliospheric-current-sheet}). At Earth, this can be seen in the North-South ($Z$) component of the IMF. Periods when the IMF is southward, and thus oppositely directed to the planetary field at the dayside boundaries of the magnetosphere, are considered to lead to increased geomagnetic activity due to magnetic reconnection (discussed in later sections). 
+Also associated with the radial outflow of the solar wind is the heliospheric current sheet. Since the solar magnetic axis is not aligned with its spin axis, the heliospheric current sheet undulates about a mean position at the Equator (Figure \ref{fig:heliospheric-current-sheet}). At Earth, this can be seen in the North-South ($Z$) component of the IMF. Periods when the IMF is southward, and thus oppositely directed to the planetary field at the dayside boundaries of the magnetosphere, are considered to lead to increased geomagnetic activity due to magnetic reconnection (discussed in later sections). 
 
 \subsection{Configuration of the terrestrial magnetosphere}
 The interaction between the solar wind and interplanetary magnetic field with the internal magnetic field of the Earth forms the magnetosphere. Since the incoming plasma is supersonic and super-Alfvenic, a bow shock is created at the interaction front. Downstream of the shock lies a region of shocked high-temperature solar wind called the magnetosheath. The magnetic field strength in the magnetosheath is larger than in the solar wind, but the field lines are still `open', i.e. they are connected at both ends to the interplanetary magnetic field. Separating the planetary field from the magnetosheath is a discontinuity called the magnetopause. The magnetopause is a current layer that shields the magnetosphere from the external inputs.
