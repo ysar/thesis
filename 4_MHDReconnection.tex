@@ -24,13 +24,13 @@ In this work, we simulate the Jovian magnetosphere using our MHD model to answer
 \section{Methodology}
 The MHD simulations presented in Chapter 3 were also used in this study. We will primarily be discussing Runs 2 and 4 (see Table \ref{tab:sw-conditions}), which use a Parker-spiral IMF (magnetic field in the $Y$ direction), which is typically expected at Jupiter's orbit. In such situations, the magnetic shear between the IMF and the magnetospheric field at the nose of the magnetopause is 90$^\circ$. The techniques used to analyze the simulation data as described in this section.
 
-\subsection{Identifying the dayside magnetopause surface}
+\subsection{Identification of the dayside magnetopause surface}
 The magnetopause is the surface separating the magnetospheric field from the interplanetary magnetic field. It is a current-carrying discontinuity, and can be identified in MHD simulations as a peak in the current density ($J$). It can also be identified by detecting the increase in density due to the density gradient between the outer magnetosphere and the magnetosheath. In our study, we use magnetic field topology to identify the magnetopause, as this definition is more robust. In our case, the dayside magnetopause is the surface which separates closed magnetic field lines of the magnetosphere from the open field lines in the solar wind. This method is unambiguous on the dayside, but cannot be used for higher latitudes or the magnetotail, which also contain open field lines, but are present inside the magnetosphere. 
 
-A hemispherical surface is created on the dayside at locations $(r=r_i, \theta_i, \phi_i)$ in spherical coordinates. From each point $i$ of the surface, a radial line segment is created to the point $(r=r_o, \theta_i, \phi_i)$, which lies well beyond the dayside bow shock and hence contains solar wind open field lines. A field line is traced from the midpoint of these two locations ($r_m$), and its connectivity is inferred by examining whether its two footprints are traced to the planet (closed) or to the solar wind (open). If the field line is closed, $r_m$ is chosen as the new inner point ($r_i:=r_m$), else $r_m$ is specified as the outer point ($r_o:=r_m$). This binary search algorithm is repeated until $r_o - r_i < 2 R_J$. The resulting midpoint is the location for the magnetopause. The whole process is repeated for each point on the initially hemispherical surface. 
+A hemispherical surface is created on the dayside at locations $(r=r_i, \theta_i, \phi_i)$ in spherical coordinates. From each point $i$ of the surface, a radial line segment is created to the point $(r=r_o, \theta_i, \phi_i)$, which lies well beyond the dayside bow shock and hence contains solar wind open field lines. A field line is traced from the midpoint of these two locations ($r_m$), and its connectivity is inferred by examining whether its two footprints are traced to the planet (closed) or to the solar wind (open). If the field line is closed, $r_m$ is chosen as the new inner point ($r_i:=r_m$), else $r_m$ is specified as the outer point ($r_o:=r_m$). This binary search algorithm is repeated until $r_o - r_i < 2 R_J$. The resulting midpoint is the location for the magnetopause. The whole process is repeated for each point on the initially hemispherical surface, which produces a new surface for the magnetopause as shown in Figure \ref{fig:reconnection-dayside}. 
 
-\subsection{Classifying a magnetic field line}
-Magnetic field lines in the MHD model can only have one of the following properties. Each type is assigned a value in the form of a `status' variable. 
+\subsection{Classification of a magnetic field line}
+Magnetic field lines in the MHD model can only have one of the following properties. Each type is assigned a value in the form of a `status' variable. The field line can be, 
 
 \begin{itemize}
     \item Connected at both ends with the IMF (open field lines or `disconnected', status=0).
@@ -41,7 +41,7 @@ Magnetic field lines in the MHD model can only have one of the following propert
 
 Most field lines in the inner and middle magnetosphere are closed (status=3). The type N and S field lines map to the northern or southern polar cap and are created due to dayside magnetic reconnection.
 
-\subsection{Calculating the open flux in the polar cap}
+\subsection{Calculation of the open flux in the polar cap}
 In order to estimate the open flux in the polar cap, we must first identify the regions in the northern and southern hemispheres which map to open field lines. This is achieved by creating a spherical surface close to the inner boundary of the MHD simulation domain and tracing field lines at each point of the surface. Points which map to closed field lines are identified, and their corresponding locations at 1 $R_J$ are estimated by using a dipole approximation (due to the existence of a gap between 1 $R_J$ and the inner boundary at 2.5 $R_J$). For an axially aligned dipole field, two points located on the same field line at locations $(r_1, \theta_1)$ and $(r_2, \theta_2)$ are related as,
 
 \begin{equation}
@@ -60,7 +60,7 @@ The resulting open flux in the polar cap can be calculated by summing up the con
     \Phi_\text{open} = \sum \Phi_i\left( \text{status}_i \neq 3 \right)
 \end{equation}
 
-\subsection{Calculating the reconnection rate}
+\subsection{Calculation of the reconnection rate}
 The rate of change of open flux in the polar cap equals the difference in the reconnection rates on the dayside versus that due to Dungey cycle flux closure on the nightside \cite{Milan2007MagneticRates}. If no reconnection is observed on the nightside ($\dot{R}_\text{nightside}=0$), then the dayside reconnection rate can be inferred using the rate of change of the open magnetic flux. 
 
 \begin{equation}
