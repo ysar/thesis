@@ -7,26 +7,62 @@
 
 \subsection{The MHD approximation}
 
+Plasmas comprise of innumerable charged particles which interact among themselves and the surrounding electromagnetic fields. In the space environment, they usually contain equal parts positive and negative charge (i.e. are quasi-neutral), in the form of various ion species and electrons, and in most situations arising in magnetospheric physics, have low densities which makes collisions between particles rare and unimportant \cite{Bruno2013TheLaboratory}. For mathematical analysis, it is convenient to study the collective motion of particles instead of tracking them individually. One of the most fundamental ways to describe this collection is by assigning a distribution function $f(t, \mathbf{x}, \mathbf{v})$, which is used to estimate the likelihood of a particle having certain position $\mathbf{x}$ and $\mathbf{v}$ at time $t$. In the absence of collisions, the total change in $f$ is assumed to be zero, and leads to the Vlasov equation, which is the fundamental conservation law of particle phase space \cite{Chen1995IntroductionPhysics,Gombosi1998PhysicsEnvironment}. 
 
-The Ohm's law for ideal MHD provides the electric field $\mathbf{E}$ as,
+\begin{equation}
+    \frac{df_\alpha}{dt} = \frac{\partial f_\alpha}{\partial t} + \mathbf{v_\alpha}\cdot\nabla f_\alpha + \mathbf{a}_\alpha \cdot \nabla_v f_\alpha = 0
+    \label{eqn:vlasov}
+\end{equation}
+
+Where $\mathbf{a}_\alpha = (\mathbf{E} + \mathbf{v_\alpha} \times \mathbf{B})e Z_\alpha/m_\alpha$ is the acceleration due to the Lorentz force on a particle species $\alpha$ with charge state $Z_\alpha$. Apart from the assumption that the plasma is non-collisional, the Vlasov equation is still relatively general and describes in a statistical way the evolution of a collection of charged particles. The analysis can be simplified by removing the dependence on the particles' velocity, which is done by integrating over the velocity space i.e. by multiplying Equation \ref{eqn:vlasov} by different powers of $\mathbf{v}$ in order to obtain its moments. The ideal MHD equations can be derived by considering three moments (zeroth, first and second) separately for the ions and electrons, and then combining them by defining a new variable $\mathbf{J}$, which is the density of the current generated due to the different ion and electron motions. 
+
+\begin{equation}
+    \mathbf{J} = en \left( \mathbf{v}_i - \mathbf{v}_e\right)
+\end{equation}
+ 
+Where its assumed that $n = Z_i n_i = n_e$ for charge-neutrality. This leads to the single-fluid ideal MHD equations (repeated below from \citeNP{Gombosi1998PhysicsEnvironment}),
+
+\begin{align}
+    \frac{d\rho}{dt} &= -\rho \left( \nabla \cdot \mathbf{v} \right)\\
+    \rho \frac{d\mathbf{u}}{dt} & = -\nabla p + \mathbf{J} \times \mathbf{B} \\
+    \frac{3}{2}\frac{d p}{d t}  & = - \frac{5}{2} p \left(\nabla \cdot \mathbf{v} \right)
+\end{align}
+
+The above equations track the change in mass density $\rho$, velocity $\mathbf{v}$ and pressure $p$. The evolution of the magnetic field can be estimated using Faraday's law,
+
+\begin{equation}
+    \frac{\partial \mathbf{B}}{\partial t} = - \nabla \times \mathbf{E}    
+\end{equation}
+
+Ampere's law (without the relativistic term for the displacement current) provides the relationship between the magnetic field intensity $\mathbf{B}$ and the current density $\mathbf{J}$,
+
+\begin{equation}
+    \nabla \times \mathbf{B} = \mu_0 \mathbf{J}    
+\end{equation}
+
+And finally, the equations are closed by using a form of Ohm's law, which can be derived by combining the ion and electron momentum equations (which are previously derived using their respective Vlasov equations). In the case of ideal MHD, we use a simplified form for the Ohm's law and neglect resistivity. This leads to the following expression for the motional electric field 
+
 \begin{equation}
     \mathbf{E} = -\mathbf{v} \times \mathbf{B}
 \end{equation}
 
-Which states that the electric field perceived by the moving plasma in the frame of reference moving with velocity $\mathbf{v}$ in a background magnetic field $\mathbf{B}$ is zero. Ultimately, this implies the magnetic flux through a surface 
-
-\begin{equation}
-    \oint_V \frac{\partial \mathbf{B}}{\partial t} \,dV
-\end{equation}
+The expression for the Ohm's law in ideal MHD implies that the electric field perceived by the moving plasma in the frame of reference moving with velocity $\mathbf{v}$ in a background magnetic field $\mathbf{B}$ is zero. The Ohm's law in ideal MHD has one major implication; the lack of resistivity implies that the plasma is ``frozen-in'' to the magnetic field. Diffusion across the magnetic field is not permitted. 
 
 \subsection{Magnetic reconnection}
 Magnetic reconnection is a process by which two regions with sufficiently sheared magnetic fields merge and transfer the energy associated with magnetic stresses into the kinetic energy of the surrounding plasma \cite{Priest2000MagneticReconnection,Yamada2010MagneticReconnection}. A simplistic analogy often used to describe magnetic reconnection is the `disconnection' and \emph{re}-connection of two magnetic field lines which are oppositely directed to each other \cite{Gonzalez2016FundamentalReconnection}. Such breakage of magnetic field lines would violate the frozen-in flux condition, and thus, magnetic reconnection is a non-ideal phenomena which requires finite resistivity to occur. 
 
-Figure <> shows a schematic of the region where two regions with anti-parallel magnetic fields merge and reconnect. Magnetic field lines diffuse towards the center of the region, called the `X-line', via the inflow region and are expelled at large velocities away from the X-line in the outflow regions. Various theories have been put forward to explain and model the steady reconnection process, to explain the different rates of observed reconnection (see for e.g. \citeNP{Yamada2010MagneticReconnection} and references therein). In particular, we will discuss the two-fluid model of reconnection. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images1/magnetic-reconnection-cartoon.png}
+    \caption{Schematic of magnetic reconnection by \protect\citeA{Hesse2020MagneticFuture} showing the different regions surrounding the X-line. Figure reproduced under the \protect\hyperlink{https://creativecommons.org/licenses/by-nc-nd/4.0}{Creative Commons} license.}
+    \label{fig:chp1-reconnection-cartoon}
+\end{figure}
 
-In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary motivation of the MMS spacecraft constellation. 
+Figure \ref{fig:chp1-reconnection-cartoon} shows a schematic of the region where two regions with anti-parallel magnetic fields merge and reconnect. Magnetic field lines diffuse towards the center of the region, called the `X-line', via the inflow region and are expelled at large velocities away from the X-line in the outflow regions. Various theories have been put forward to explain and model the steady reconnection process, to explain the different rates of observed reconnection (see for e.g. \citeNP{Yamada2010MagneticReconnection} and references therein). In particular, we will discuss the two-fluid model of reconnection. 
 
-The model shown in Figure <> represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that this is not necessarily the case. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
+In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary motivation of the MMS spacecraft constellation, whose primary motivation is to estimate the contribution of other terms in the generalized Ohm's law (e.g. \citeNP{Vasyliunas1975TheoreticalMerging} and references therein) which effectively impart resistivity to the plasma \cite{Burch2016MagnetosphericObjectives}.  
+
+The model shown in Figure \ref{fig:chp1-reconnection-cartoon} represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that this is not necessarily the case. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
 
 Magnetic reconnection is a fundamental and ubiquitous process in space plasmas and occurs in most regions of the space environment, from the solar corona to the various planetary magnetospheres, to the heliopause. The implications of magnetic reconnection on the magnetospheres of Earth and Jupiter, and the differences between the two, are discussed in subsequent sections.
 
@@ -37,9 +73,9 @@ A brief description of the processes occurring in the terrestrial magnetosphere 
 \subsection{The solar wind and interplanetary magnetic field}
 The solar wind is a stream of particles accompanied by the interplanetary magnetic field (IMF), which flows outward from the sun. It originates from the lower regions of the solar corona, expands and accelerates until it gains a speed roughly between 400 to 600 km/s, by which time it is usually supersonic and super-Alfvenic \cite{Gombosi1998PhysicsEnvironment}. It is composed primarily of protons with an average temperature on the order of $10^5$ K and density of $\sim$7 cm$^{-3}$ (at 1 AU = $1.49 \times 10^{11}$ km), though other species and charge states are also prevalent.
 
-It was hypothesized that the radial flow of solar wind plasma distorts the frozen-in interplanetary magnetic field into a spiral configuration with increasing distance from the sun \cite{Parker1958DynamicsFields.,Ness1964SolarField} (see Figure \ref{fig:parker-spiral}). This may be a reasonable assumption during quiet intervals, but the solar wind and IMF can be highly dynamic, leading to the formation of corotating-interaction-regions (CIRs) and coronal-mass-ejections (CMEs). These can be associated with drastic changes in the solar wind dynamic pressure and orientation of the IMF, which perturbs the terrestrial magnetosphere in various ways \cite{Borovsky2006DifferencesStorms,Denton2006GeomagneticWind}. 
+It was hypothesized that the radial flow of solar wind plasma distorts the frozen-in interplanetary magnetic field into a spiral configuration with increasing distance from the sun \cite{Parker1958DynamicsFields.,Ness1964SolarField} (see Figure \ref{fig:parker-spiral}). This may be a reasonable assumption during quiet intervals, but the solar wind and IMF can be highly dynamic, leading to the formation of corotating-interaction-regions (CIRs) and coronal-mass-ejections (CMEs). These can be associated with drastic changes in the solar wind dynamic pressure and orientation of the IMF, which perturbs the terrestrial magnetosphere in various ways \cite{Borovsky2006DifferencesStorms,Denton2006GeomagneticWind} e.g. by increasing the strength of the equatorial ring current, creating geomagnetically-induced currents on the planet surface, and strengthening the terrestrial aurora etc.
 
-Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines which intersect the orbits of Earth and Jupiter at 1 AU and 5.2 AU respectively. The Parker-spiral IMF at Earth possess a large $\mathbf{r}$ component (where $\mathbf{r}$ is the Sun-Earth direction, also the direction of solar wind flow). On the other hand, the IMF is almost fully azimuthal by the time it reaches Jupiter's orbit.
+Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines which intersect the orbits of Earth and Jupiter at 1 AU and 5.2 AU respectively. The Parker-spiral IMF at Earth possess a large radial and azimuthal component (where $\mathbf{r}$ is the Sun-Earth direction, also the direction of solar wind flow). On the other hand, the IMF is almost fully azimuthal by the time it reaches Jupiter's orbit. This would translate to a near 90-degree magnetic shear between the IMF and the internal field of the planet at the sub-solar magnetopause. 
 
 \begin{figure}
     \centering
@@ -48,7 +84,6 @@ Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines whi
     \label{fig:parker-spiral}
 \end{figure}
 
-
 \begin{figure}
     \centering
     \includegraphics{images1/heliospheric-currentsheet.png}
@@ -56,20 +91,19 @@ Figure \ref{fig:parker-spiral} shows two interplanetary magnetic field lines whi
     \label{fig:heliospheric-current-sheet}
 \end{figure}
 
-
-Also associated with the radial outflow of the solar wind is the heliospheric current sheet. Since the solar magnetic axis is not aligned with its spin axis, the heliospheric current sheet undulates about a mean position at the Equator (Figure \ref{fig:heliospheric-current-sheet}). At Earth, this can be seen in the North-South ($Z$) component of the IMF. Periods when the IMF is southward, and thus oppositely directed to the planetary field at the dayside boundaries of the magnetosphere, are considered to lead to increased geomagnetic activity due to magnetic reconnection (discussed in later sections). 
+Also associated with the radial outflow of the solar wind is the heliospheric current sheet. Since the solar magnetic axis is not aligned with its spin axis, the heliospheric current sheet undulates about a mean position at the Equator (Figure \ref{fig:heliospheric-current-sheet}). At Earth, this can be seen in the North-South ($Z$) component of the IMF. Periods when the IMF is southward, and thus oppositely directed to the planetary field at the dayside boundaries of the magnetosphere, are considered to lead to increased geomagnetic activity due to magnetic reconnection \cite{Boudouridis2005EnhancedOrientation}. 
 
 \subsection{Configuration of the terrestrial magnetosphere}
-The interaction between the solar wind and interplanetary magnetic field with the internal magnetic field of the Earth forms the magnetosphere. Since the incoming plasma is supersonic and super-Alfvenic, a bow shock is created at the interaction front. Downstream of the shock lies a region of shocked high-temperature solar wind called the magnetosheath. The magnetic field strength in the magnetosheath is larger than in the solar wind, but the field lines are still `open', i.e. they are connected at both ends to the interplanetary magnetic field. Separating the planetary field from the magnetosheath is a discontinuity called the magnetopause. The magnetopause is a current layer that shields the magnetosphere from the external inputs.
+The interaction between the solar wind and interplanetary magnetic field with the internal magnetic field of the Earth forms the magnetosphere. Since the incoming plasma is supersonic and super-Alfvenic, a bow shock is created at the interaction front \cite{Spreiter1966HydromagneticMagnetosphere}. Downstream of the shock lies a region of shocked high-temperature solar wind called the magnetosheath \cite{Lucek2005TheMagnetosheath}. The magnetic field strength in the magnetosheath is larger than in the solar wind, but the field lines are still `open', i.e. they are connected at both ends to the interplanetary magnetic field. Separating the planetary field from the magnetosheath is a discontinuity called the magnetopause \cite{Russell1978InitialObservations,Sonnerup1967MagnetopauseObservations}. The magnetopause is a current-carrying layer that shields the magnetosphere from the external inputs.
 
-On the nightside, the interaction of the tail magnetic field with the solar wind and IMF creates a magnetotail. Magnetic field lines in the magnetotail are considered to be primarily in the plane of the solar wind flow. Present between oppositely directed magnetic field lines in the northern and southern magnetotail lobes is the magnetospheric tail current sheet, which is surrounded by a region of high-density plasma called the plasmasheet. 
+On the nightside, the interaction of the tail magnetic field with the solar wind and IMF creates a magnetotail \cite{Hones1984StructureActivity}. Magnetic field lines in the magnetotail are considered to be primarily in the plane of the solar wind flow. Present between oppositely directed magnetic field lines in the northern and southern magnetotail lobes is the magnetospheric tail current sheet, which is surrounded by a region of high-density plasma called the plasmasheet. 
 
-In the inner regions of the magnetosphere are the planet's radiation belts - regions of trapped high-energy particles undergoing repeated bounce motions. In these regions the current sheet is weak or non-existent and the magnetic field is close to being dipolar. Co-located with the radiation belts is the plasmasphere, composed of relatively low-energy particles (ions and electrons) which are undergoing the $\mathbf{E}\times\mathbf{B}$ drift in the planetary field.
+In the inner regions of the magnetosphere are the planet's radiation belts - regions of trapped high-energy particles undergoing repeated bounce motions (\citeNP{Ripoll2020ParticleQuestions} and references therein). In these regions the current sheet is weak or non-existent and the magnetic field is close to being dipolar. Co-located with the radiation belts is the plasmasphere, composed of relatively low-energy particles (ions and electrons) which are undergoing the $\mathbf{F}\times\mathbf{B}$ drift in the planetary field \cite{Lemaire1998ThePlasmasphere}.
 
 \subsection{Magnetic reconnection in the terrestrial magnetosphere}
-In the context of the terrestrial magnetosphere, magnetic reconnection is usually studied in two regions. The first region is the dayside magnetopause, where high density plasma of the magnetosheath associated with a strong magnetic field interacts with the relatively low density plasma of the magnetosphere, associated with weaker magnetic fields. Magnetic reconnection has been observed to occur at all orientations of the IMF (clock angle), but is most prominent when the IMF is pointing southward, as in this situation the magnetic shear between it and the northward pointing magnetospheric field (at the magnetopause) is maximized. In such a case, `open' field lines in the solar wind reconnect with `closed' field lines of the magnetosphere, and produce newly opened field lines which are transported away from the reconnection site by the reconnection outflow.
+In the context of the terrestrial magnetosphere, magnetic reconnection is usually studied in two regions. The first region is the dayside magnetopause, where high density plasma of the magnetosheath associated with a strong magnetic field interacts with the relatively low density plasma of the magnetosphere, associated with weaker magnetic fields. Magnetic reconnection has been observed to occur at all orientations of the IMF (clock angle), but is most prominent when the IMF is pointing southward \cite{Swisdak2003DiamagneticMagnetopause}, as in this situation the magnetic shear between it and the northward pointing magnetospheric field (at the magnetopause) is maximized. In such a case, `open' field lines in the solar wind reconnect with `closed' field lines of the magnetosphere, and produce newly opened field lines which are transported away from the reconnection site by the reconnection outflow.
 
-The second region where reconnection is studied widely is the terrestrial magnetotail. Magnetic field lines in the northern and southern magnetotail lobes which are separated by the magnetotail current sheet are often directed oppositely to one another. Two such open field lines in the magnetotail may spontaneously reconnect and convert into a single closed field line. More often, magnetic reconnection is observed to occur near the planet, where field lines may still be closed, and is preceded by a thinning of the magnetotail current sheet, and results in an explosive reconnection event called a \emph{substorm}. 
+The second region where reconnection is studied widely is the terrestrial magnetotail \cite{Nakamura2006DynamicsReconnection}. Magnetic field lines in the northern and southern magnetotail lobes which are separated by the magnetotail current sheet are often oppositely directed to one another. Two such open field lines in the magnetotail may spontaneously reconnect and convert into a single closed field line. More often, magnetic reconnection is observed to occur near the planet, where field lines may still be closed, and is preceded by a thinning of the magnetotail current sheet, and results in an explosive reconnection event called a \emph{substorm}. 
 
 \subsection{Ionosphere}
 Neutral species in Earth's upper atmosphere are photo-ionized, and the relatively low-densities at higher altitudes lead to longer collision time scales which supports a persistent region of charged particles called the ionosphere. Being full of ions and electrons, the highly conducting ionosphere is intricately connected with the magnetosphere.

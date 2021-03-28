@@ -11,12 +11,12 @@
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=true,     % window fit to page when opened
     pdfstartview={Fit},    % fits the width of the page to the window
-    pdftitle={My title},    % title
-    pdfauthor={Author},     % author
-    pdfsubject={Subject},   % subject of the document
-    pdfcreator={Creator},   % creator of the document
-    pdfproducer={Producer}, % producer of the document
-    pdfkeywords={keyword1, key2, key3}, % list of keywords
+    pdftitle={Dynamics of the Jovian magnetosphere},    % title
+    pdfauthor={Yash Sarkango},     % author
+    pdfsubject={},   % subject of the document
+    pdfcreator={Yash Sarkango},   % creator of the document
+    pdfproducer={}, % producer of the document
+    pdfkeywords={Jupiter, Magnetosphere, Dynamics}, % list of keywords
     pdfnewwindow=true,      % links in new PDF window
     colorlinks=true,       % false: boxed links; true: colored links
     linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
@@ -53,12 +53,20 @@
 \settowidth\mylen{\bfseries Chapter 1:\ } % if more than 9 chapters, use "Chapter 10"
 \cftsetindents{chap}{0pt}{\mylen}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \singlespacing
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 \renewcommand{\contentsname}{Table of Contents}
 
 % TITLE PAGE  -------------------------------------------------
 \def\titlepage{
     
-    \hbox{\vspace{1.2in}}
+    \hbox{\vspace{1in}}
     \begin{center}
     \onehalfspacing
     
@@ -84,7 +92,7 @@
         
     \end{center}
     
-    \vspace{0.5in}
+    \vspace{0.80in}
     Doctoral Committee:
     
     \hspace{1in}Associate Professor Xianzhe Jia, Chair
@@ -144,12 +152,18 @@
 
 % LIST OF TABLES ---------------------------------------------
 \def\makelistoftables{
+
     \addcontentsline{toc}{chapter}{List of Tables}
+    \begin{singlespacing}
     \listoftables
+    \end{singlespacing}
 }   
 
 % LIST OF FIGURES --------------------------------------------
 \def\makelistoffigures{
     \addcontentsline{toc}{chapter}{List of Figures}
+    \begin{singlespacing}
     \listoffigures
+    \end{singlespacing}
+    
 }   
