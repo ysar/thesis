@@ -10,7 +10,7 @@ Another mechanism which temporarily modifies the structure of the current sheet 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images6/JRM09_Bmag.png}
+    \includegraphics[width=\textwidth]{images5/JRM09_Bmag.png}
     \caption{Contours of the magnetic field strength (in Gauss) on a representative flattened ellipsoid surface of Jupiter as per the JRM09 magnetic field model. The System III longitude system is a left-handed planetocentric coordinate system often used in studies of the Jovian system. In this system, the planetary magnetic field is constant
     \protect\cite{Connerney2018}.}
     \label{fig:JRM09}
@@ -18,7 +18,7 @@ Another mechanism which temporarily modifies the structure of the current sheet 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.8\textheight]{images6/Juno-currentsheet-magjedi.png}
+    \includegraphics[height=0.8\textheight]{images5/Juno-currentsheet-magjedi.png}
     \caption{Magnetic field and energetic particle (JEDI) measurements taken by the Juno spacecraft in the JSS coordinate system ($B_r$, $B_\theta$, $B_\phi$, $|B|$). Juno crosses the current sheet and plasma sheet twice every rotation period, as seen in the multiple reversals of $B_r$ accompanied with an intensification of particle fluxes separated by roughly $\sim$5 hours. Note the different temporal separation for north-to-south versus south-to-north crossings.}
     \label{fig:juno-current-sheet}
 \end{figure}
@@ -107,7 +107,7 @@ The \citeA{Khurana1992a} model had three parameters $(v_0, \rho_0, x_0)$ represe
 
 \begin{figure}
     \centering
-    \includegraphics[width=0.8\textwidth]{images6/example-hinging.png}
+    \includegraphics[width=0.8\textwidth]{images5/example-hinging.png}
     \caption{Exaggerated examples of the Jovian current sheet locations for two different models. The \protect\citeA{Kivelson1978ASheet} model does not account for hinging of the current sheet and hence has larger excursions with increasing distance from the planet. The \protect\citeA{Behannon1981} model includes current sheet hinging, which limits the oscillations beyond a certain radial distance.}
     \label{fig:example-hinging}
 \end{figure}
@@ -131,7 +131,7 @@ To simulate the modulation of the Jovian current sheet, we modify the internal m
 
 In the simulations shown in Chapters 3 and 4, we used a spherical grid. Through our tests, we found that a spherical grid is not ideal when simulating a time-varying magnetosphere, where density and magnetic structures frequently cross the polar regions of the planet where grid cells are small and have a large aspect ratio for a spherical grid. To prevent this problem, we use a cartesian grid in the simulations performed for the present study. Like the previous version, we use the capability of the BATSRUS MHD code to successively refine regions of interest, such as the Io torus and the low-latitude middle and outer magnetosphere where the current sheets oscillations take place. The cartesian grid contains roughly 19 million cells, with the lowest grid resolution of 0.125 $R_J$ present near the planet and the Io torus. 
 
-Different upstream conditions are introduced to evaluate the response of the current sheet to varying solar wind dynamic pressure. The properties of the solar wind used for the three runs are tabulated in Table \ref{tab:sw-conditions-chp6}. The solar wind dynamic pressure increases by a factor of 5 between each run. 
+Different upstream conditions are introduced to evaluate the response of the current sheet to varying solar wind dynamic pressure. The properties of the solar wind used for the three runs are tabulated in Table \ref{tab:sw-conditions-chp5}. The solar wind dynamic pressure increases by a factor of 5 between each run. 
 
 \begin{table}
     \centering
@@ -146,7 +146,7 @@ Different upstream conditions are introduced to evaluate the response of the cur
 
     \end{tabular}
     \caption{Solar wind magnetic field strength, speed, density, temperature and dynamic pressure used in the present study. The variables are prescribed at the upstream boundary of the simulation at $X=192$ $R_J$. The interplanetary magnetic field is oriented along the negative $Z$ direction.}
-    \label{tab:sw-conditions-chp6}
+    \label{tab:sw-conditions-chp5}
 \end{table}
 
 \subsection{Estimating the current sheet parameters within the MHD model}
@@ -169,7 +169,7 @@ The Levenberg-Marquardt iterative algorithm \cite{Newville2018Non-LinearPython,L
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images6/CurrentSheet_fitted.png}
+    \includegraphics[width=\textwidth]{images5/CurrentSheet_fitted.png}
     \caption{An example of the current sheet extracted from the MHD model  by identified the contour line where $B_r=0$ (dashed black curve), along with the fitted current sheet using the Behannon et al. (1981) form (magenta).}
     \label{fig:example-fitcurrentsheet}
 \end{figure}
@@ -184,7 +184,7 @@ We investigate the response of the current sheet parameters to the solar wind dy
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images6/comparison_highdynP_kivelson.png}
+    \includegraphics[width=\textwidth]{images5/comparison_highdynP_kivelson.png}
     \caption{Histograms of the parameters used to fit the Kivelson et al. (1978) model form to the current sheet in the MHD model. Different colors represent the different solar wind dynamic pressures.}
     \label{fig:comparison-hist-kivelson}
 \end{figure}
@@ -215,7 +215,7 @@ On the other hand, the distribution of $\rho_0$ in the MHD model overwhelmingly 
 \subsection{The Behannon et al. (1981) form}
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images6/comparison_highdynP_behannon.png}
+    \includegraphics[width=\textwidth]{images5/comparison_highdynP_behannon.png}
     \caption{Histograms of the parameters used to fit the Behannon et al. (1981) model form to the current sheet in the MHD model. Different colors represent the different solar wind dynamic pressures.}
     \label{fig:comparison-hist-behannon}
 \end{figure}
@@ -244,7 +244,7 @@ The hinging parameter $a_0$ also exhibits large variations, with most values ran
   
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images6/comparison_highdynP_khurana.png}
+    \includegraphics[width=\textwidth]{images5/comparison_highdynP_khurana.png}
     \caption{Histograms of the parameters used to fit the Khurana (1992) model form to the current sheet in the MHD model. Different colors represent the different solar wind dynamic pressures.}
     \label{fig:comparison-hist-khurana}
 \end{figure}
@@ -275,75 +275,75 @@ Overall, the \citeA{Khurana1992a} gives values which are reasonable, but the dif
 
 \subsection{Changes in plasma parameters due to solar wind driven compression}
 
-In Figures \ref{fig:chp6-comparison-slices-density}-\ref{fig:chp6-comparison-slices-magnetosonic}, we show contours of different plasma parameters such as mass density, temperature, magnetic field strength, and the Alfven, sound and magnetosonic speeds to understand how solar wind dynamic pressure influences wave speeds in the magnetosphere. All figures are split into two columns; the left column shows the YZ plane (dawn-dusk meridian) whereas the right column shows the XZ plane (noon-midnight) meridian. The current sheet (where $B_r=0$) is highlighted in each figure as a white line. Different rows represent the three different solar wind dynamic pressures in increasing order as shown in Table \ref{tab:sw-conditions-chp6}. All plots were made at a time when the magnetic moment of the dipole was entirely in the XZ plane and pointed sunward. 
+In Figures \ref{fig:chp5-comparison-slices-density}-\ref{fig:chp5-comparison-slices-magnetosonic}, we show contours of different plasma parameters such as mass density, temperature, magnetic field strength, and the Alfven, sound and magnetosonic speeds to understand how solar wind dynamic pressure influences wave speeds in the magnetosphere. All figures are split into two columns; the left column shows the YZ plane (dawn-dusk meridian) whereas the right column shows the XZ plane (noon-midnight) meridian. The current sheet (where $B_r=0$) is highlighted in each figure as a white line. Different rows represent the three different solar wind dynamic pressures in increasing order as shown in Table \ref{tab:sw-conditions-chp5}. All plots were made at a time when the magnetic moment of the dipole was entirely in the XZ plane and pointed sunward. 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_Density.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_Density.png}
     \caption{Plasma mass density contours in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-density}
+    \label{fig:chp5-comparison-slices-density}
 \end{figure}
 
-Figure \ref{fig:chp6-comparison-slices-density} shows the contours of plasma density $\rho_m$ in units of amu/cm$^3$. As expected, the magnetosphere is compressed and reduces in size as the solar wind dynamic pressure is increased, which can be seen by identifying the bow shock and magnetopause regions as two discontinuities characterized by sharp density gradients. The density in the magnetosphere also increases drastically in the magnetosheath, but also increases in the other regions of the magnetosphere, including its deep interior (panel F). Note particularly the magnetotail lobe regions surrounding the current sheet (white curve), which have a density of $\sim0.1$ amu/cm$^3$ for the 0.011 nPa case and which increases to $>2$ amu/cm$^3$ for the 0.267 nPa solar wind dynamic pressure case. 
+Figure \ref{fig:chp5-comparison-slices-density} shows the contours of plasma density $\rho_m$ in units of amu/cm$^3$. As expected, the magnetosphere is compressed and reduces in size as the solar wind dynamic pressure is increased, which can be seen by identifying the bow shock and magnetopause regions as two discontinuities characterized by sharp density gradients. The density in the magnetosphere also increases drastically in the magnetosheath, but also increases in the other regions of the magnetosphere, including its deep interior (panel F). Note particularly the magnetotail lobe regions surrounding the current sheet (white curve), which have a density of $\sim0.1$ amu/cm$^3$ for the 0.011 nPa case and which increases to $>2$ amu/cm$^3$ for the 0.267 nPa solar wind dynamic pressure case. 
 
-One can also see the different behaviour of the current sheet in panels D, E and F of Figure \ref{fig:chp6-comparison-slices-density} (solid white curve). For the 0.011 nPa case, the current sheet oscillations appear more gradual, and a minima and maxima are separated by $\sim200$ $R_J$. In constrast, for the 0.267 nPa case, the current sheet oscillates more strongly, with a maxima and minima separation (or the effective half-wavelength) of only about $50$ $R_J$. In panel F, at around $x=-200$ $R_J$ the oscillations of the current sheet break into disjoint curves, which are a result of plasmoid generation due to magnetic reconnection.  
+One can also see the different behaviour of the current sheet in panels D, E and F of Figure \ref{fig:chp5-comparison-slices-density} (solid white curve). For the 0.011 nPa case, the current sheet oscillations appear more gradual, and a minima and maxima are separated by $\sim200$ $R_J$. In constrast, for the 0.267 nPa case, the current sheet oscillates more strongly, with a maxima and minima separation (or the effective half-wavelength) of only about $50$ $R_J$. In panel F, at around $x=-200$ $R_J$ the oscillations of the current sheet break into disjoint curves, which are a result of plasmoid generation due to magnetic reconnection.  
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_Temperature.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_Temperature.png}
     \caption{Contours of plasma temperature in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-temperature}
+    \label{fig:chp5-comparison-slices-temperature}
 \end{figure}
 
-In Figure \ref{fig:chp6-comparison-slices-temperature}, we show the contours of plasma temperature $T = p/nk_B$ in eV, assuming an ion mass of 16 amu. As expected, a larger solar wind dynamic pressure creates a stronger bow shock and increases the temperature in the magnetosheath regions. However, we also find that despite an increase in density (as seen in Figure \ref{fig:chp6-comparison-slices-density}), the plasma temperature in the magnetotail increases by almost two orders of magnitude between the case of 0.011 nPa and 0.267 nPa, from 100 eV to $\sim$5000 eV, for e.g. at $x=-200$ $R_J$. This increase in plasma temperature is also seen in the magnetotail lobes (panels D, E and F), which we discussed previously as having increased in density by a factor of 10 to 20 due to the solar wind compression. 
+In Figure \ref{fig:chp5-comparison-slices-temperature}, we show the contours of plasma temperature $T = p/nk_B$ in eV, assuming an ion mass of 16 amu. As expected, a larger solar wind dynamic pressure creates a stronger bow shock and increases the temperature in the magnetosheath regions. However, we also find that despite an increase in density (as seen in Figure \ref{fig:chp5-comparison-slices-density}), the plasma temperature in the magnetotail increases by almost two orders of magnitude between the case of 0.011 nPa and 0.267 nPa, from 100 eV to $\sim$5000 eV, for e.g. at $x=-200$ $R_J$. This increase in plasma temperature is also seen in the magnetotail lobes (panels D, E and F), which we discussed previously as having increased in density by a factor of 10 to 20 due to the solar wind compression. 
 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_Bmag.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_Bmag.png}
     \caption{Magnetic field strength contours in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-Bmag}
+    \label{fig:chp5-comparison-slices-Bmag}
 \end{figure}
 
-In Figure \ref{fig:chp6-comparison-slices-Bmag}, we show contours of the magnetic field strength in nT. Unlike the previous cases for density and temperature, the magnetic field does not exhibit drastic changes due to the solar wind compression. However, an increase in field strength can be seen in panels D, E and F in the magnetotail lobes, e.g. at $x=-100$ $R_J$ and $z=-50$ $R_J$, likely due to the increased magnetic pressure in the lobes to balance the higher solar wind dynamic pressure outside the magnetopause. 
+In Figure \ref{fig:chp5-comparison-slices-Bmag}, we show contours of the magnetic field strength in nT. Unlike the previous cases for density and temperature, the magnetic field does not exhibit drastic changes due to the solar wind compression. However, an increase in field strength can be seen in panels D, E and F in the magnetotail lobes, e.g. at $x=-100$ $R_J$ and $z=-50$ $R_J$, likely due to the increased magnetic pressure in the lobes to balance the higher solar wind dynamic pressure outside the magnetopause. 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_AlfvenSpeed.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_AlfvenSpeed.png}
     \caption{Alfven speed contours in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-alfven}
+    \label{fig:chp5-comparison-slices-alfven}
 \end{figure}
 
-Knowing the magnetic field strength and plasma density, we can estimate the Alfven speeds in the MHD simulation. Its contours are shown in Figure \ref{fig:chp6-comparison-slices-alfven} in units of km/s. Since the Alfven speed is propotional to $B$ but inversely proportional to $\rho^{1/2}$, we expect the contours to follow that of the magnetic field closely. The smallest Alfven speed in the magnetotail are found at the current sheet, where the magnetic field is weak. The results from our MHD simulation clearly show that Alfven speeds in the magnetotail lobes, surrounding the current sheet, reduce due to a solar wind compression. For e.g. at the same location at $x=-100$ $R_J$ and $z=-50$ $R_J$, the Alfven speed reduces from $\sim316$ km/s to $\sim200$ km/s as the solar wind dynamic pressure is increased from 0.011 nPa to 0.267 nPa. The region of high Alfven speed, highlighted via red contours, is seen to shrink with increased solar wind dynamic pressure. This counter-intuitive result can be explained by the relative changes in $B$ and $\rho$; the increase in plasma density during the 0.267 nPa case is much larger than the corresponding increase in magnetic field strength in the magnetotail lobes. 
+Knowing the magnetic field strength and plasma density, we can estimate the Alfven speeds in the MHD simulation. Its contours are shown in Figure \ref{fig:chp5-comparison-slices-alfven} in units of km/s. Since the Alfven speed is propotional to $B$ but inversely proportional to $\rho^{1/2}$, we expect the contours to follow that of the magnetic field closely. The smallest Alfven speed in the magnetotail are found at the current sheet, where the magnetic field is weak. The results from our MHD simulation clearly show that Alfven speeds in the magnetotail lobes, surrounding the current sheet, reduce due to a solar wind compression. For e.g. at the same location at $x=-100$ $R_J$ and $z=-50$ $R_J$, the Alfven speed reduces from $\sim316$ km/s to $\sim200$ km/s as the solar wind dynamic pressure is increased from 0.011 nPa to 0.267 nPa. The region of high Alfven speed, highlighted via red contours, is seen to shrink with increased solar wind dynamic pressure. This counter-intuitive result can be explained by the relative changes in $B$ and $\rho$; the increase in plasma density during the 0.267 nPa case is much larger than the corresponding increase in magnetic field strength in the magnetotail lobes. 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_SoundSpeed.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_SoundSpeed.png}
     \caption{Contours of the sound speed in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-sound}
+    \label{fig:chp5-comparison-slices-sound}
 \end{figure}
 
-The sound speed can also be estimated from the model using the plasma pressure and density, and its contours are shown in Figure \ref{fig:chp6-comparison-slices-sound}. Unlike the Alfven speed, which is smallest at the current sheet, the sound speed inside the current sheet and associated plasma sheet is seen to be greater than in the surrounding magnetotail lobes. Increasing solar wind dynamic pressure increases the sound speed in all regions of the magnetosphere, which is expected as it is closely related to the plasma temperature, which we discussed increased by two orders of magnitude between the 0.011 nPa and 0.267 nPa case (Figure \ref{fig:chp6-comparison-slices-temperature}). 
+The sound speed can also be estimated from the model using the plasma pressure and density, and its contours are shown in Figure \ref{fig:chp5-comparison-slices-sound}. Unlike the Alfven speed, which is smallest at the current sheet, the sound speed inside the current sheet and associated plasma sheet is seen to be greater than in the surrounding magnetotail lobes. Increasing solar wind dynamic pressure increases the sound speed in all regions of the magnetosphere, which is expected as it is closely related to the plasma temperature, which we discussed increased by two orders of magnitude between the 0.011 nPa and 0.267 nPa case (Figure \ref{fig:chp5-comparison-slices-temperature}). 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_RatioAlfvenSonic.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_RatioAlfvenSonic.png}
     \caption{Contours of the ratio of the Alfven speed to the sound speed in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-ratioalfvensound}
+    \label{fig:chp5-comparison-slices-ratioalfvensound}
 \end{figure}
 
-The Alfven speed in the magnetotail is seen to decrease with increasing solar wind dynamic pressure (Figure \ref{fig:chp6-comparison-slices-alfven}), whereas the sound speed is seen to increase (Figure \ref{fig:chp6-comparison-slices-sound}), and this diverging behaviour needs to be further investigated. In Figure \ref{fig:chp6-comparison-slices-ratioalfvensound}, we show the contours of the ratio of the Alfven speed to the sound speed. In the majority of the inner and middle magnetosphere, the Alfven speeds are high and are larger than the sound speed by 1 to 2 orders of magnitude. However, this characteristic of the magnetosphere changes for higher solar wind dynamic pressures. Panels D, E and F of Figure \ref{fig:chp6-comparison-slices-ratioalfvensound} clearly show that with increasing solar wind dynamic pressure, the ratio of the Alfven speed to the sound speed decreases in all regions of the magnetosphere. Some regions in the outer magnetosphere which were previously dominated by the Alfven speed ($v_A/v_S \approx 20$) for the 0.011 nPa case now have sound speeds larger than the Alfven speed ($v_A/v_S < 1$) for the 0.267 nPa case, e.g. at $x=100$ $R_J$ and $z=-50$ $R_J$. 
+The Alfven speed in the magnetotail is seen to decrease with increasing solar wind dynamic pressure (Figure \ref{fig:chp5-comparison-slices-alfven}), whereas the sound speed is seen to increase (Figure \ref{fig:chp5-comparison-slices-sound}), and this diverging behaviour needs to be further investigated. In Figure \ref{fig:chp5-comparison-slices-ratioalfvensound}, we show the contours of the ratio of the Alfven speed to the sound speed. In the majority of the inner and middle magnetosphere, the Alfven speeds are high and are larger than the sound speed by 1 to 2 orders of magnitude. However, this characteristic of the magnetosphere changes for higher solar wind dynamic pressures. Panels D, E and F of Figure \ref{fig:chp5-comparison-slices-ratioalfvensound} clearly show that with increasing solar wind dynamic pressure, the ratio of the Alfven speed to the sound speed decreases in all regions of the magnetosphere. Some regions in the outer magnetosphere which were previously dominated by the Alfven speed ($v_A/v_S \approx 20$) for the 0.011 nPa case now have sound speeds larger than the Alfven speed ($v_A/v_S < 1$) for the 0.267 nPa case, e.g. at $x=100$ $R_J$ and $z=-50$ $R_J$. 
 
 \begin{figure}
     \centering
-    \includegraphics[height=0.9\textheight]{images6/compare_runs_currentsheet_MagnetosonicSpeed.png}
+    \includegraphics[height=0.9\textheight]{images5/compare_runs_currentsheet_MagnetosonicSpeed.png}
     \caption{Contours of the magnetosonic speed in the $x=0$ (YZ) plane (A-C) and in the $y=0$ (XZ) plane (D-F) for different solar wind dynamic pressures. The current sheet is highlighted as a solid white curve.}
-    \label{fig:chp6-comparison-slices-magnetosonic}
+    \label{fig:chp5-comparison-slices-magnetosonic}
 \end{figure}
 
-The fastest wave mode in the ideal MHD system is the fast magnetosonic mode, whose speed can be calculated using the Alfven and sound speeds ($v_\text{ms} = \sqrt{v_A^2 + v_S^2}$). The magnetosonic mode would represent the fastest means by which a location in the distant magnetotail would perceive a change in the orientation of the dipole, and hence is crucial to understand the oscillations of the current sheet. The contours of $v_\text{ms}$ are shown in Figure \ref{fig:chp6-comparison-slices-magnetosonic}, which can now be understood based on the changes in the individual components i.e. the Alfven speed and the sound speed, and ultimately the basic plasma properties such as density, temperature and magnetic field strength. 
+The fastest wave mode in the ideal MHD system is the fast magnetosonic mode, whose speed can be calculated using the Alfven and sound speeds ($v_\text{ms} = \sqrt{v_A^2 + v_S^2}$). The magnetosonic mode would represent the fastest means by which a location in the distant magnetotail would perceive a change in the orientation of the dipole, and hence is crucial to understand the oscillations of the current sheet. The contours of $v_\text{ms}$ are shown in Figure \ref{fig:chp5-comparison-slices-magnetosonic}, which can now be understood based on the changes in the individual components i.e. the Alfven speed and the sound speed, and ultimately the basic plasma properties such as density, temperature and magnetic field strength. 
 
-Note that the wave speeds for semi-relativistic MHD do not have closed form expressions, so in these calculations we apply a simple correction to the conventional wave speeds as $v := \gamma v$ where $\gamma = 1/\sqrt{1+v^2/c^2}$, and assume that regions in the middle magnetosphere and beyond have wave speeds much smaller than the speed of light and can be analyzed using the conventional expressions for the Alfven and sound speed. The maximum contour line shown in Figures \ref{fig:chp6-comparison-slices-alfven} and \ref{fig:chp6-comparison-slices-magnetosonic} (deep red) is 10000 km/s which is still only 3\% of the speed of light and occupies a small region located at $r < 15$ $R_J$ in the polar regions of the planet. 
+Note that the wave speeds for semi-relativistic MHD do not have closed form expressions, so in these calculations we apply a simple correction to the conventional wave speeds as $v := \gamma v$ where $\gamma = 1/\sqrt{1+v^2/c^2}$, and assume that regions in the middle magnetosphere and beyond have wave speeds much smaller than the speed of light and can be analyzed using the conventional expressions for the Alfven and sound speed. The maximum contour line shown in Figures \ref{fig:chp5-comparison-slices-alfven} and \ref{fig:chp5-comparison-slices-magnetosonic} (deep red) is 10000 km/s which is still only 3\% of the speed of light and occupies a small region located at $r < 15$ $R_J$ in the polar regions of the planet. 
 
 The contours of the magnetosonic speed are similar to those observed for the Alfven speed, which is not surprising as the Alfven speed is much larger than the sound speed in the inner and middle magnetosphere. Like the Alfven speed, it is smallest near the oscillating current sheet and increases in regions with large magnetic field strength i.e. the magnetotail lobes and the near-planet regions. Increasing solar wind dynamic pressure from 0.011 to 0.053 nPa and ultimately to 0.267 nPa, is seen to decrease the magnetosonic speed at all locations in the magnetotail, including at the regions where the sound speed exceeds the Alfven speed. For example, at $x=-100$ $R_J$ and $z=-50$ $R_J$, the magnetosonic speed decreases from $\sim320$ km/s to $\sim250$ km/s and $200$ km/s respectively for the three different cases. 
 
@@ -351,9 +351,9 @@ In the next section we will discuss the implications of these results and their 
 
 \section{Discussion}
 
-Figures \ref{fig:comparison-hist-kivelson} and \ref{fig:comparison-hist-behannon} show that the speed of the current sheet wave, which propagates outward from the planet, decreases as the solar wind dynamic pressure is increased. This is also seen physically in panels D, E and F or Figure \ref{fig:chp6-comparison-slices-density}, which show that the during periods of high solar wind dynamic pressure (0.267 nPa), the current sheet is more \emph{wavy} than for periods during low solar wind dynamic pressure (0.011 nPa). At the same time, the degree of hinging, inferred by the maximum extent of the current sheet in the positive and negative $z$ directions, remains roughly the same. However, the simple constant value for $U$ is a construct for the given form of the empirical models, and in reality the current sheet oscillations are a result of the interaction of many large scale MHD waves which originate from the planet due to the time-varying internal field. Nevertheless, the decreasing value of $U$ suggested that wave speeds in the magnetosphere were affected due to the solar wind compression. 
+Figures \ref{fig:comparison-hist-kivelson} and \ref{fig:comparison-hist-behannon} show that the speed of the current sheet wave, which propagates outward from the planet, decreases as the solar wind dynamic pressure is increased. This is also seen physically in panels D, E and F or Figure \ref{fig:chp5-comparison-slices-density}, which show that the during periods of high solar wind dynamic pressure (0.267 nPa), the current sheet is more \emph{wavy} than for periods during low solar wind dynamic pressure (0.011 nPa). At the same time, the degree of hinging, inferred by the maximum extent of the current sheet in the positive and negative $z$ directions, remains roughly the same. However, the simple constant value for $U$ is a construct for the given form of the empirical models, and in reality the current sheet oscillations are a result of the interaction of many large scale MHD waves which originate from the planet due to the time-varying internal field. Nevertheless, the decreasing value of $U$ suggested that wave speeds in the magnetosphere were affected due to the solar wind compression. 
 
-In Figure \ref{fig:chp6-comparison-slices-density}, we showed that during periods of high solar wind dynamic pressure, the density in the magnetosphere increases by a factor of 10 to 20, which reduces the Alfven speeds in the magnetotail lobes (Figure \ref{fig:chp6-comparison-slices-alfven}) despite a slight increase in the magnetic field strength (Figure \ref{fig:chp6-comparison-slices-Bmag}) due to the solar wind driven compression. This behaviour is replicated in the fast mode speed (Figure \ref{fig:chp6-comparison-slices-magnetosonic}), as the Alfven speeds in magnetotail are usually much larger than the sound speed (Figure \ref{fig:chp6-comparison-slices-sound}). 
+In Figure \ref{fig:chp5-comparison-slices-density}, we showed that during periods of high solar wind dynamic pressure, the density in the magnetosphere increases by a factor of 10 to 20, which reduces the Alfven speeds in the magnetotail lobes (Figure \ref{fig:chp5-comparison-slices-alfven}) despite a slight increase in the magnetic field strength (Figure \ref{fig:chp5-comparison-slices-Bmag}) due to the solar wind driven compression. This behaviour is replicated in the fast mode speed (Figure \ref{fig:chp5-comparison-slices-magnetosonic}), as the Alfven speeds in magnetotail are usually much larger than the sound speed (Figure \ref{fig:chp5-comparison-slices-sound}). 
 
 Based on these findings, we can claim that an increase in solar wind dynamic pressure, which has always been assumed to increase the magnetic stress in the magnetotail lobes and hence the Alfven speed, in fact \emph{decreases} the wave speeds for the Alfven and the fast mode. This could have a direct implication on the wavy-ness of the current sheet, as lower values of $U$ would decrease the effective wavelength of the up-down oscillations. 
 

@@ -21,7 +21,7 @@ The magnetic field observations are also supported by plasma observations made b
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/locations-fluxropes.jpg}
+    \includegraphics[width=\textwidth]{images6/locations-fluxropes.jpg}
     \caption{The trajectory of the Juno spacecraft in the Jupiter system is shown in panels a, b, and c. Superimposed on panel b are magnetic field lines extracted from the MHD simulation described in previous chapters. The location for two flux rope events are identified and the directions of minimum, intermediate and maximum variance are highlighted via arrows. In panel d), we show the expected magnetic signature of a tailward moving O-line versus a flux rope.}
     \label{fig:locations-fluxropes-eg}
 \end{figure}
@@ -82,7 +82,7 @@ We also specify a condition that the component of the magnetic field showing the
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/event-1-fluxrope.jpg}
+    \includegraphics[width=\textwidth]{images6/event-1-fluxrope.jpg}
     \caption{Planetward moving flux rope observed by the Juno spacecraft at DOY 236, 2017. Panels a-d show the magnetic field components in the spherical JSS coordinate system, while Panel e shows the spectra for the electric field measured using the Juno Waves instrument for the given time period. The flux rope structure is highlighted within magenta lines. Panels f-h show the result of the minimum variance analysis and force-free flux rope fitting. Panels i-j are hodograms of the different components obtained using MVA.}
     \label{fig:event-1-fluxrope}
 \end{figure}
@@ -95,7 +95,7 @@ The eigenvectors of the variance matrix in the direction of minimum, intermediat
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/event-1-jedi.png}
+    \includegraphics[width=\textwidth]{images6/event-1-jedi.png}
     \caption{The magnetic field observations along with JEDI dynamic spectra for the ions and electrons. The last two rows show the dynamic pitch angle spectra for the protons and electrons respectively.}
     \label{fig:event1-jedi}
 \end{figure}
@@ -107,7 +107,7 @@ In Figure \ref{fig:event1-jedi}, we show the measurements taken by JEDI in the 4
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/event-2-fluxrope.jpg}
+    \includegraphics[width=\textwidth]{images6/event-2-fluxrope.jpg}
     \caption{Tailward moving flux rope observed by the Juno spacecraft at DOY 338, 2017. Same format as Figure \ref{fig:event-1-fluxrope}.}
     \label{fig:event-2-fluxrope}
 \end{figure}
@@ -132,7 +132,7 @@ For Event 2, the MVA analysis shows that Juno is sampling the portion of the flu
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/event-2-context.jpg}
+    \includegraphics[width=\textwidth]{images6/event-2-context.jpg}
     \caption{Caption}
     \label{fig:event-2-context}
 \end{figure}
@@ -145,23 +145,29 @@ Both events are observed in the dawnside magnetotail, where plasma density is re
 
 \subsection{Duration and scale of plasmoid events}
 
-\begin{figure}
-    \centering
-    \includegraphics{images5/duration_histogram.png}
-    \caption{Caption}
-    \label{fig:duration-histogram}
-\end{figure}
+The algorithm detected 79 flux ropes which fulfilled all the criteria specified in section <>. A histogram of their `peak-to-peak' duration, i.e. the separation between two extrema in $B_\theta$ is shown in Figure \ref{fig:duration-histogram}. The upper limit for an event was selected to be 300 s, as we wish to only study the small scale structures. The lower limit was specified to 10 s to get sufficient data points within the event interval. Most of the events identified by the algorithm have a duration less than 150 s, with a mean of 69.91 s and median value of 52 s. 13 events were identified with durations between 20 and 30 s. 
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{images5/ion_inertial_selected.png}
+    \includegraphics{images6/duration_histogram.png}
+    \caption{Histogram of the peak-to-peak durations of the events identified using the automated algorithm. }
+    \label{fig:duration-histogram}
+\end{figure}
+
+In Figure \ref{fig:ion-inertial-scale}, we show the relative scale of these events with the local ion inertial length. For this, we assume that the plasma density can be approximated using the empirical relationship provided by \citeA{Bagenal2011b}. The velocity of each event is assumed to be the Alfven speed in the intervals preceding and succeeding the plasmoid, which can be estimated based on the presumed density and observed magnetic field strength. This allows us to calculate the diameters of the identified plasmoids, similar to that done previously for Event 1 and 2. Also plotted is the curve for the ion-inertial length, which uses the same density profile. 
+
+There is a considerable spread in the plasmoid diameters, ranging from $10^3$ km to $5 \times 10^4$ km, but in most cases they are within an order of magnitude of the local ion inertial length. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{images6/ion_inertial_selected.png}
     \caption{Caption}
     \label{fig:ion-inertial-scale}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics{images5/TrajectoryLocationofEvent_quiver_selected.png}
+    \includegraphics{images6/TrajectoryLocationofEvent_quiver_selected.png}
     \caption{Caption}
     \label{fig:trajectory-quiver}
 \end{figure}

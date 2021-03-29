@@ -54,13 +54,20 @@ Magnetic reconnection is a process by which two regions with sufficiently sheare
 \begin{figure}
     \centering
     \includegraphics[width=0.8\textwidth]{images1/magnetic-reconnection-cartoon.png}
-    \caption{Schematic of magnetic reconnection by \protect\citeA{Hesse2020MagneticFuture} showing the different regions surrounding the X-line. Figure reproduced under the \protect\hyperlink{https://creativecommons.org/licenses/by-nc-nd/4.0}{Creative Commons} license.}
+    \caption{Schematic of magnetic reconnection by \protect\citeA{Hesse2020MagneticFuture} showing the different regions surrounding the X-line. (\copyright \protect\citeNP{Hesse2020MagneticFuture}, reproduced with permission)}
     \label{fig:chp1-reconnection-cartoon}
 \end{figure}
 
 Figure \ref{fig:chp1-reconnection-cartoon} shows a schematic of the region where two regions with anti-parallel magnetic fields merge and reconnect. Magnetic field lines diffuse towards the center of the region, called the `X-line', via the inflow region and are expelled at large velocities away from the X-line in the outflow regions. Various theories have been put forward to explain and model the steady reconnection process, to explain the different rates of observed reconnection (see for e.g. \citeNP{Yamada2010MagneticReconnection} and references therein). In particular, we will discuss the two-fluid model of reconnection. 
 
-In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary motivation of the MMS spacecraft constellation, whose primary motivation is to estimate the contribution of other terms in the generalized Ohm's law (e.g. \citeNP{Vasyliunas1975TheoreticalMerging} and references therein) which effectively impart resistivity to the plasma \cite{Burch2016MagnetosphericObjectives}.  
+In the two-fluid model, the ions and electrons are presumed to demagnetize, i.e. stop following the magnetic field orientation, at different regions near the X-line, where the magnetic field strength is at a minimum. The ions, being heavier, are demagnetized first as they enter the \emph{ion diffusion region} and escape via the outflow, where they are accelerated. The electrons remain magnetized until they reach the \emph{electron diffusion region}. The different motions of the electrons and ions generates the quadrupolar Hall magnetic field. As the electron diffusion region is much smaller than those for the ions, it is much difficult to detect in the in-situ measurements and remains an active topic for research. Studying the electron diffusion region was the primary objective of the MMS spacecraft constellation, whose goal is estimate the contribution of other terms in the generalized Ohm's law (e.g. \citeNP{Vasyliunas1975TheoreticalMerging} and references therein) which effectively impart resistivity to the plasma \cite{Burch2016MagnetosphericObjectives}.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images1/reconnection-multiplexline-example.png}
+    \caption{Example of multiple X-line reconnection taken from \protect\citeA{Drake2006FormationReconnection}, who have used a particle-in-cell code for these simulations. The contours show the out-of-plane component of the current density ($J_z$). Note the progression from steady reconnection to the generation of small magnetic islands at the thin current sheet, which coalesce to become large magnetic flux ropes or plasmoids. (\copyright American Geophysical Union, reproduced with permission)}
+    \label{fig:example-multiplexline-reconnection}
+\end{figure}
 
 The model shown in Figure \ref{fig:chp1-reconnection-cartoon} represents a situation where magnetic reconnection is occurring in a steady manner. However, particle-in-cell and hybrid simulations of reconnecting fields have shown that this is not necessarily the case. Instead, the thin current sheet near the X-line was found to be unstable to the tearing instability, and breaks into individual closed magnetic loops separated by multiple X-lines \cite{Drake2006ElectronReconnection,Drake2006FormationReconnection}. These magnetic loops, also called flux ropes or O-lines, are created within the ion-diffusion region and are transported away from the X-line through the outflow, where they are free to coalesce through repeated reconnection and enlarge or dissipate \cite{Markidis2012CollisionlessChain,Wang2016CoalescenceReconnection}. 
 
@@ -103,45 +110,85 @@ In the inner regions of the magnetosphere are the planet's radiation belts - reg
 \subsection{Magnetic reconnection in the terrestrial magnetosphere}
 In the context of the terrestrial magnetosphere, magnetic reconnection is usually studied in two regions. The first region is the dayside magnetopause, where high density plasma of the magnetosheath associated with a strong magnetic field interacts with the relatively low density plasma of the magnetosphere, associated with weaker magnetic fields. Magnetic reconnection has been observed to occur at all orientations of the IMF (clock angle), but is most prominent when the IMF is pointing southward \cite{Swisdak2003DiamagneticMagnetopause}, as in this situation the magnetic shear between it and the northward pointing magnetospheric field (at the magnetopause) is maximized. In such a case, `open' field lines in the solar wind reconnect with `closed' field lines of the magnetosphere, and produce newly opened field lines which are transported away from the reconnection site by the reconnection outflow.
 
-The second region where reconnection is studied widely is the terrestrial magnetotail \cite{Nakamura2006DynamicsReconnection}. Magnetic field lines in the northern and southern magnetotail lobes which are separated by the magnetotail current sheet are often oppositely directed to one another. Two such open field lines in the magnetotail may spontaneously reconnect and convert into a single closed field line. More often, magnetic reconnection is observed to occur near the planet, where field lines may still be closed, and is preceded by a thinning of the magnetotail current sheet, and results in an explosive reconnection event called a \emph{substorm}. 
+The second region where reconnection is studied widely is the terrestrial magnetotail (e.g. \citeNP{Nakamura2006DynamicsReconnection}). Magnetic field lines in the northern and southern magnetotail lobes which are separated by the magnetotail current sheet are often oppositely directed to one another. Two such open field lines in the magnetotail may spontaneously reconnect and convert into a single closed field line. More often, magnetic reconnection is observed to occur near the planet, where field lines may still be closed, and is preceded by a thinning of the magnetotail current sheet, and results in an explosive reconnection event called a \emph{substorm}. 
 
 \subsection{Ionosphere}
-Neutral species in Earth's upper atmosphere are photo-ionized, and the relatively low-densities at higher altitudes lead to longer collision time scales which supports a persistent region of charged particles called the ionosphere. Being full of ions and electrons, the highly conducting ionosphere is intricately connected with the magnetosphere.
+Neutral species in Earth's upper atmosphere are photo-ionized, and the relatively low-densities at higher altitudes lead to longer collision time scales which supports a persistent region of charged particles called the ionosphere \cite{Schunk2009Ionospheres}. Being full of ions and electrons, the highly conducting ionosphere is intricately connected with the magnetosphere.
 
 Ionospheric plasma at mid- to low-latitudes corotates with the planet due to collisions with the corotating thermospheric neutrals. The magnetic field lines associated with these regions are connected at both ends with the planet (i.e. they are \emph{closed}) and have an equatorial footprint in the magnetosphere at a distance of a few Earth radii. Since the field lines in ideal MHD can be considered to possess the same electrostatic potential, the corotation velocity of the ionospheric plasma is transmitted to the associated magnetic flux tube in the magnetosphere. This creates a corotating region of low-energy plasma called the plasmasphere. This picture is consistent with the argument that the plasmasphere is a result of $\mathbf{E}\times\mathbf{B}$ drift, where $\mathbf{E}=-\nabla \Phi$ can be considered to be the corotation electric field. Thus, the ionosphere plays a crucial role in maintaining the corotation at Earth. 
 
-At higher latitudes, magnetic field lines are open, i.e. they are connected at one end with the interplanetary magnetic field. In such a case, the ionosphere plays a more responsive role to changes in the solar wind and distant magnetosphere. 
+At higher latitudes, magnetic field lines are open, i.e. they are connected at one end with the interplanetary magnetic field. In such a case, the ionosphere plays a more responsive role to changes in the solar wind and distant magnetosphere. Field aligned currents from the magnetosphere close through perpendicular (to $\mathbf{B}$) currents in the ionosphere. The precipitation of particles also modifies the conductivity in the ionosphere \cite{Schunk2009Ionospheres}. 
 
-Field aligned currents from the magnetosphere close through perpendicular (to $\mathbf{B}$) currents in the ionosphere. 
+\subsection{Magnetosphere-ionosphere coupling at Earth}
+The magnetosphere and ionosphere are intricately coupled at all latitudes. In the case of anti-parallel IMF, magnetic reconnection on the dayside magnetopause creates open field lines, which convect along with the solar wind. At the same time, one end is connected to the polar regions of the planet. Eventually, after reaching the magnetotail, convection is no longer tailward, and the newly closed magnetic flux returns to the dayside. This cycle of opening and closing of magnetic flux through magnetic reconnection is called the Dungey cycle. 
 
-
-
-
-
-
-\subsection{Magnetosphere-ionosphere coupling}
-
+Effects of the Dungey cycle can be seen in the convection patterns of the high-latitude ionosphere. In the anti-parallel IMF case, ionospheric plasma convects from the dayside to the nightside across the polar cap. After flux closure on the nightside, plasma returns to the dayside via lower-latitudes, creating a two-cell convection pattern. This overall convection of the magnetosphere and ionospheric plasma directly determines the location of upward field-aligned currents, and hence the location of the terrestrial aurora. 
 
 \section{Jupiter's magnetosphere}
 
+Jupiter is a strongly magnetized planet, and the interaction of its planetary magnetic field with the solar wind and IMF creates its magnetosphere \cite{Krupp2004DynamicsMagnetosphere}. Much like at Earth, Jupiter's magnetosphere also consists of a bow-shock, magnetopause and magnetotail because of the supersonic and super-Alfvenic solar wind. However, there are crucial differences due to its large size, strong magnetic field and internal processes associated with its natural satellites. Some key differences between the two magnetospheres are highlighted in Table \ref{tab:earth-jupiter-scales}. Firstly, Jupiter's magnetosphere is much larger than that of the Earth in terms of the planets' respective radii. This is in part due to the strong magnetic field of Jupiter, along with the presence of energetic particles in the magnetosphere, which have a substantial contribution to the thermal pressure of the magnetospheric plasma \cite{Bagenal2011b}. 
+
+\begin{table}
+    \centering
+    \begin{tabular}{p{0.5\linewidth}|c|c}
+        &\textbf{Earth}  &\textbf{Jupiter}\\
+    \hline
+    Equatorial Radius (km) &6378    &71492\\
+    Equatorial field strength (nT)  &$\sim$25000   &$\sim400000$\\
+    Internal Source (kg/s)          &   &250 to $>1000$ kg/s\\
+    Rotation Period (hours)         &23.92   &9.92\\
+    Dominant species                &H$^+$, O$^+$   &$S^+$, $O^+$, $S^{++}$, $H^+$\\
+    Magnetopause standoff distance ($R_\text{planet}$)    &8 to 11   &62 to 111\\
+    Bow-shock standoff distance ($R_\text{planet}$)   &16 to 22  &77 to 130\\
+    Auroral Power (GW)              &20 to 100   &200 to $>$1000 GW \\
+    Dipole tilt ($^\circ$)  &$\sim11^\circ$   &$\sim10^\circ$\\
+    \end{tabular}
+    \caption{Comparison of various magnetospheric properties for Earth and Jupiter \protect\cite{Shue1998MagnetopauseConditions,Cairns1996MagneticShock,Khurana2004a, Krupp2004DynamicsMagnetosphere,Clarke2009}.}
+    \label{tab:earth-jupiter-scales}
+\end{table}
+
+The Jovian magnetosphere is divided into three regions for discussion, 
+
+\begin{enumerate}
+    \item The inner magnetosphere, containing the Io and Europa plasma torus, extending upto $r < 15$ $R_J$.
+    \item The middle magnetosphere, containing the corotating regions, corotation-enforcement current systems, extending from $15 R_J < r < \sim30 R_J$.
+    \item The outer magnetosphere, where corotation is minimal and various dynamics such as magnetic reconnection, Kelvin-Helmholtz instabilities are observed, ranging beyond $r > \sim30 R_J$. 
+\end{enumerate}
 
 \subsection{The inner magnetosphere}
-The large natural satellites of the gas giants greatly contribute to plasma dynamics in their magnetospheres. At Jupiter, the largest moons in increasing order of radial distance from the planet are Io, Europa and Ganymede. Out of these, Io and Europa and considered to be un-magnetized, but interact with the surrounding magnetospheric plasma due to the resistive effects of subsurface magma and saline oceans respectively. Ganymede is the only known natural satellite in the solar system which possess a strong internal magnetic field, which interacts with the Jovian magnetic field to create its own magnetosphere. 
+Another key difference between the gas giant magnetospheres from that of the Earth is the presence of internal sources of plasma associated with their natural satellites \cite{Bolton2015a}. At Jupiter, the largest moons in increasing order of radial distance from the planet are Io (at $5.9$ $R_J$), Europa (at $9.4$ $R_J)$ and Ganymede (at $\sim15$ $R_J$). Out of these, Io and Europa and considered to be un-magnetized, but interact with the surrounding magnetospheric plasma due to the resistive effects of subsurface magma and saline oceans respectively. Ganymede is the only known natural satellite in the solar system which possess a strong internal magnetic field, which interacts with the Jovian magnetic field to create its own magnetosphere \cite{Russell2005InteractionEnvironments,Jia2010MagneticSaturn,Khurana2011EvidenceInterior}. 
 
-Out of these satellites, Io and Europa are responsible for contributing substantial mass to the inner magnetosphere of Jupiter. Volcanism at Io creates SO$_2$, which is ionized either via photo-ionization or electron-impact ionization to produce S$^{++}$, O$^+$ etc. Meanwhile, plumes at Europa eject water neutrals into the surroundings, which ionize to produce water group ions - H$^+$, O$^+$ etc. the net contribution of this ionization results in a mass addition of approximately 250-1000 kg/s for Io and 50 kg/s for Europa. A similar situation is seen at Saturn, where Enceladus adds $\sim$50 kg/s to its magnetosphere. Local loss mechanisms at such as charge exchange cannot fully account for this addition of mass. 
+Out of these satellites, Io and Europa are responsible for contributing substantial mass to the inner magnetosphere of Jupiter. Volcanism at Io creates SO$_2$, which is ionized either via photo-ionization or electron-impact ionization to produce S$^{+}$, S$^{++}$, O$^+$ and H$^+$ (\citeNP{Bagenal2011b} and references therein). Meanwhile, plumes at Europa eject water neutrals into the surroundings, which ionize to produce water group ions - H$^+$, O$^+$. The net contribution of this ionization results in a mass addition of approximately 260-1400 kg/s for Io \cite{Bagenal2011b} and $\sim$50 kg/s for Europa. A similar situation is seen at Saturn, where Enceladus adds $\sim$50 kg/s to its magnetosphere. 
 
-The newly created ions are ``picked-up'' by the surrounding magnetospheric plasma. Newly created plasma ions, which presumably still possess the Keplerian velocity of the neutrals ($\sim$10 km/s at Io's orbit), perceive the motional electric field ($\mathbf{E} = -\mathbf{u} \times \mathbf{B}$) due to the faster magnetospheric flow ($u=\sim200$ km/s) and undergo the $\mathbf{E} \times \mathbf{B}$ drift. Ion pickup increases particle velocity in the direction perpendicular to the magnetic field, increasing anisotropy. 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images1/chp1-io-massloading.jpg}
+    \caption{Schematic by \protect\citeA{Russell2005InteractionEnvironments} showing features of mass loading at Io. The magnetospheric plasma is faster than Io's Keplerian velocity. The motional electric field of the corotating plasma ``picks-up'' the newly ionized particles, forming a ring-distribution that relaxes into stable configuration over many days. (Reproduced with permission)}
+    \label{fig:io-torus-schematic}
+\end{figure}
 
-The magnetospheric plasma in the inner magnetosphere corotates with the planet. Corotation at these distances is facilitated through ion-neutral collisions in the Jovian ionosphere, which prevents a velocity gradient from forming between the thermosphere and ionosphere. The ionosphere then transmits the velocity to all regions in the magnetosphere with which it is connected via magnetic field lines. The corotation process in the inner magnetosphere does not require the presence of large-scale field aligned currents as in the case of the middle and outer magnetosphere, which we will discuss in the next section. 
+A portion of these newly created ions are lost due to the electron recombination or charge exchange. The rest are ``picked-up'' by the surrounding magnetospheric plasma; newly created plasma ions, which presumably still possess the Keplerian velocity of the neutrals ($\sim$17 km/s at Io's orbit), perceive the motional electric field ($\mathbf{E} = -\mathbf{u} \times \mathbf{B}$) due to the faster magnetospheric flow ($u=\sim74$ km/s) and undergo the $\mathbf{E} \times \mathbf{B}$ drift \cite{Russell2005InteractionEnvironments}. Ion pickup increases particle velocity in the direction perpendicular to the magnetic field, increasing anisotropy in the particle distribution. 
+
+The magnetospheric plasma in the inner magnetosphere co-rotates with the planet. Corotation at these distances is facilitated through ion-neutral collisions in the Jovian ionosphere, which prevents a velocity gradient from forming between the thermosphere and ionosphere. The ionosphere then transmits the velocity to all regions in the magnetosphere with which it is connected via magnetic field lines. The corotation process in the inner magnetosphere does not require the presence of large-scale field aligned currents as in the case of the middle and outer magnetosphere, which we will discuss in the next section.
+
+Also present in inner magnetosphere are trapped energetic particles comprising of Jupiter's radiation belts. 
 
 \subsection{The middle magnetosphere}
-The plasma created in the inner magnetosphere of Jupiter is believed to be lost through a series of instabilities. The large density in the inner magnetosphere leads to a decrease in flux tube content with radial distance, which, in the presence of the centrifugal force, creates regions unstable to the interchange instability. Observations by the Galileo and Cassini spacecraft have detected plasma and magnetic signatures containing pockets of high magnetic field strength or high energy plasma which is lower in density, within regions of low energy, high-density plasma. 
+The plasma created in the inner magnetosphere of Jupiter is believed to be lost through a series of instabilities. The large density in the inner magnetosphere leads to a decrease in flux tube content with radial distance, which, in the presence of the centrifugal force, creates regions unstable to the interchange instability. Observations by in situ spacecraft have detected plasma and magnetic signatures containing pockets of high magnetic field strength or energetic plasma which is lower in density, within regions of lower energy high-density plasma \cite{Thorne1997GalileoTorus,Kivelson1997IntermittentInterchange}. 
 
-It is believed that as Iogenic plasma moves from the inner magnetosphere to further radial distances, the conservation of angular momentum results in the loss of its azimuthal velocity. The slowing down of magnetospheric plasma creates a ``bend-back'' of the frozen-in magnetic field lines in the equatorial plane. The bending of these field lines, or more accurately, the production of magnetic curvature, creates radial currents in the equatorial region to counter the deceleration due to angular-momentum conservation. The radial currents, together with the predominantly southward magnetic field, create a $\mathbf{J}\times\mathbf{B}$ force in the azimuthal direction. These ``corotation-enforcement'' currents are closed via field-aligned currents and perpendicular currents in the Jovian ionosphere. The ionospheric location corresponding to the outward currents (and hence, precipitating electrons) is considered to be the location of the main oval of the Jovian ultraviolet aurora.
+It is believed that as Iogenic plasma moves from the inner magnetosphere to further radial distances, the conservation of angular momentum results in the loss of some of its azimuthal velocity \cite{Cowley2001a,Hill2001,Southwood2001a}. The slowing down of magnetospheric plasma creates a ``bend-back'' of the frozen-in magnetic field lines in the equatorial plane. The bending of these field lines, or more accurately, the production of magnetic curvature, creates radial currents in the equatorial region to counter the deceleration due to angular-momentum conservation. The radial currents, together with the predominantly southward magnetic field, create a $\mathbf{J}\times\mathbf{B}$ force in the azimuthal direction. These ``corotation-enforcement'' currents are closed via field-aligned currents and perpendicular currents in the Jovian ionosphere. The ionospheric location corresponding to the outward currents (and hence, precipitating electrons) is considered to be the location of the main oval of the Jovian ultraviolet aurora.
 
 The centrifugal force in Jupiter's magnetosphere also stresses the field in the radial direction, leading to the formation of a `magnetodisc' configuration and a strong cross tail current sheet. Evidence for this process has been provided by in-situ spacecraft such as Galileo and Juno, which observed that field lines located at large distances departed greatly from the dipole expectation. 
 
 \subsection{The outer magnetosphere}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{images1/chp1-vasyliunas-cycle.jpg}
+    \caption{Schematic by \protect\citeA{Vasyliunas1983a} showing how a plasmoid is released in the Jovian magnetotail \protect\cite{Russell2005InteractionEnvironments}.}
+    \label{fig:vasyliunas-cycle}
+\end{figure}
+
 Eventually, the stretching of magnetic field lines at large radial distances on the nightside thins the equatorial current sheet to an extent that allows for magnetic reconnection to take place. Reconnection in Jupiter's magnetosphere is different from the Dungey-cycle reconnection seen in the terrestrial magnetosphere, where open field lines in the magnetotail reconnect and produce a closed field line. At Jupiter, magnetotail reconnection is believed to occur spontaneously due to the thinning of the magnetotail current sheet, leading to reconnection within the same field line. This process detaches a loop-like magnetic structure which is disconnected from the other closed field lines and is free to travel tailward and escape the magnetosphere. Since these loop-like structures transport plasma away from the magnetosphere, they are referred to as ``plasmoids''. The newly reconnected closed field line, now devoid of heavy mass, returns to the planet and continues to corotate and get loaded with mass from the inner magnetosphere. This cycle of mass loss through internal magnetic reconnection is called the ``Vasyliunas'' cycle. The Vasyliunas cycle is considered to be the final process that facilitates the loss of Iogenic plasma from the magnetosphere to the external solar wind.
 
 In-situ observations by Galileo and Juno have shown that plasmoids are created in the Jovian magnetosphere due to magnetic reconnection. The observed plasmoids were fairly large, with diameters ranging between 2-20 $R_J$. Despite their size, it was estimated that the mass carried by theses plasmoids could account for an effective loss of ~200 kg/s, much less than the ~1000 kg/s added by Io. 
@@ -151,7 +198,8 @@ In-situ observations by Galileo and Juno have shown that plasmoids are created i
 
 \section{Jupiter's UV aurora}
 
-\section{Objectives of this study}d
+\section{Objectives of this study}
+
 
 % \section{Open questions}
 % \subsection{Variability of the Jovian UV aurora: Effect of solar wind dynamic pressure?}
