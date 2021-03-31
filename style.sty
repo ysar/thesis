@@ -19,9 +19,9 @@
     pdfkeywords={Jupiter, Magnetosphere, Dynamics}, % list of keywords
     pdfnewwindow=true,      % links in new PDF window
     colorlinks=true,       % false: boxed links; true: colored links
-    linkcolor=blue,          % color of internal links (change box color with linkbordercolor)
-    citecolor=blue,        % color of links to bibliography
-    filecolor=magenta,      % color of file links
+    linkcolor=black,          % color of internal links (change box color with linkbordercolor)
+    citecolor=black,        % color of links to bibliography
+    filecolor=black,      % color of file links
     urlcolor=black          % color of external links
 }
 
@@ -74,10 +74,10 @@
     {\Large \bf Dynamics of the Jovian magnetosphere: Combining insights from global MHD simulations and in situ measurements from the Juno spacecraft}
     
     \vspace{0.5in}
-    by 
+    by
     \vspace{0.5in}
     
-    Yash Sarkango
+    {\bf Yash Sarkango}
     \vspace{0.5in}
     
     {
@@ -93,15 +93,20 @@
     \end{center}
     
     \vspace{0.80in}
-    Doctoral Committee:
+    \parbox{5.3in}{
+    \singlespacing
+    \bf
+    Doctoral Committee:\\[0pt]
+    \mbox{ }\hspace{0.6in}
+    Associate Professor Xianzhe Jia, Chair\\
+    \mbox{ }\hspace{0.6in}
+    Professor James A. Slavin\\
+    \mbox{ }\hspace{0.6in}
+    Professor Gabor Toth\\
+    \mbox{ }\hspace{0.6in}
+    Professor Mark J. Kushner\\
+    }
     
-    \hspace{1in}Associate Professor Xianzhe Jia, Chair
-    
-    \hspace{1in}Professor James A. Slavin
-    
-    \hspace{1in}Professor Gabor Toth
-
-    \hspace{1in}Professor Mark J. Kushner
 
     \thispagestyle{empty}
 }
@@ -131,11 +136,27 @@
 % DEDICATION --------------------------------------------------
 \def\dedicationpage{
     
-    \chapter{Dedication}{
-        \pagenumbering{roman}
-        \setcounter{page}{2}
-        % \pagestyle{plain}
-        Insert dedication here.}
+    \clearpage
+    \pagenumbering{roman}
+    \setcounter{page}{2}
+    % \pagestyle{plain}
+    
+    \hbox{}
+    \vfill
+    
+    \begin{center}
+    \begin{singlespacing}
+    \parbox{4.3in}{
+    \centering
+    To my grandmothers, for their hard work and sacrifice, without which none of this would have been possible.
+    
+    }
+    \end{singlespacing}
+    \end{center}
+    
+    \vfill
+    \hbox{}
+    \addcontentsline{toc}{chapter}{Dedication}
 
 }
 
