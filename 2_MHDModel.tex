@@ -83,21 +83,27 @@ The IE solver operates under an electrostatic assumption and solves for the elec
     j_R \left(R_1\right) = \left[ \nabla_\perp \cdot \left( \mathbf{\Sigma} \cdot \nabla \psi \right) \right]_{r=R_1}
 \end{equation}
 
-Where $j_R$ is the current density in the radial direction, $\psi$ is the electrostatic potential on the surface and $\mathbf{\Sigma}$ is the height-integrated conductance tensor which, in a cartesian coordinate system where $Z$ in the direction of the magnetic field, takes the form 
+Where $j_R$ is the current density in the radial direction, $\psi$ is the electrostatic potential on the surface and $\mathbf{\Sigma}$ is the height-integrated conductance tensor which, in a local cartesian coordinate system where $Z$ in the direction of the magnetic field, takes the form 
 \begin{equation}
-    \mathbf{\Sigma} = \left[ \begin{array}{ccc}
+    \mathbf{\Sigma}' = \left[ \begin{array}{ccc}
     \Sigma_P     &-\Sigma_H   &0  \\
     \Sigma_H     &\Sigma_P   &0  \\
     0          &0        &\Sigma_0
     \end{array} \right]
 \end{equation}
 
-With $\Sigma_H$, $\Sigma_P$ and $\Sigma_0$ being the Hall, Pedersen and Alfven conductance respectively. The IE solver uses a finite-differencing method to construct the linear system which is solved using iterative methods separately for the northern and southern hemispheres.
+With $\Sigma_H$, $\Sigma_P$ and $\Sigma_0$ being the Hall, Pedersen and Alfven conductance respectively. The conductance is derived from the respective conductivity by integrating along the radial (height) direction \cite{Goodman1995ASimulations}. 
+
+\begin{equation}
+\Sigma_i = \int_{r_1}^{r_2} \sigma_i \, dr
+\end{equation}
+
+The IE solver uses a finite-differencing method to construct the linear system which is solved using iterative methods separately for the northern and southern hemispheres.
 
 Two‐way coupling between BATSRUS and the IE solver is achieved in the following manner. Field‐aligned currents from the magnetosphere are collected at a prescribed radial distance of 3 $R_J$ ($R_J$ = 71492 km is Jupiter's mean radius at 1 bar pressure) and are then mapped to the surface of the planet assuming that the magnetic field between 1 and 3 $R_J$ is dipolar. At the surface, a Poisson solver is used to solve Ohm's law for a given distribution of ionospheric conductance. In the present work, we assume a uniform Pedersen conductance of either 0.05 S or 0.1 S, which is on the lower end of previous estimates (0.1–10 S by \citeNP{Strobel1983Ionosphere,Nichols2003} and 0.47 S by \citeNP{Gerard2021VariabilityAurora}) and set the Hall conductance to 0. The perturbation electric field obtained from the IE module is added to the co-rotational electric field, and the total electric field is then used to prescribe the plasma velocity at the inner boundary of the MHD domain at 2.5 $R_J$. A detailed discussion of how this coupling is achieved is given by \citeA{Ridley2004IonosphericConductance} in the context of the terrestrial magnetosphere and by \citeA{Jia2012} and \citeA{Jia2012DrivingSources} in application to Saturn's magnetosphere.
 
 \subsection{Mass loading sources terms}
-In order to accurately model Jupiter's magnetosphere, it is necessary to include the contribution of plasma by its moons, especially Io. Io provides the largest internal source of plasma to Jupiter's magnetosphere, estimated to add $\sim$250 kg/s to 1 ton/s of plasma \cite{Bagenal2011b}. In our model, we include contributions due to ionization and charge‐exchange in the form of source terms in the mass, momentum, and energy equations. Dissociative recombination is a minor process and, therefore, neglected in the present simulations. We use a prescribed neutral torus centered at Io's orbital radius of 5.9 $R_J$ according to the following form. The neutral distribution used for the Io torus is a modified form of the one obtained by \citeA{Schreier1998a} and an exponential falloff with latitude is considered. We use the following expression to calculate the neutral number density ($n_n$ [cm$^{-3}$]) at a spatial location defined in terms of cylindrical coordinates ($r_{xy} = \sqrt{x^2 + y^2}$ $R_J$). 
+In order to accurately model Jupiter's magnetosphere, it is necessary to include the contribution of plasma by its moons, especially Io. Io provides the largest internal source of plasma to Jupiter's magnetosphere, estimated to add $\sim$250 kg/s to 1 ton/s of plasma \cite{Bagenal2011b}. In our model, we include contributions due to ionization and charge‐exchange in the form of source terms in the mass, momentum, and energy equations. Dissociative recombination is a minor process and, therefore, neglected in the present simulations. We use a prescribed neutral torus centered at Io's orbital radius of 5.9 $R_J$ according to the following form. The neutral distribution used for the Io torus is a modified form of the one obtained by \citeA{Schreier1998a} and an exponential falloff with latitude is considered. We prescribe the following expression to calculate the neutral number density ($n_n$ [cm$^{-3}$]) at a spatial location defined in terms of cylindrical coordinates ($r_{xy} = \sqrt{x^2 + y^2}$ $R_J$). 
 
 \begin{equation}
     n_n \left(r_{xy}, z\right) = n_{n_0} \exp{\left(\frac{-z^2}{H_s^2}\right)}\times 
@@ -134,6 +140,8 @@ Here $C_i$ is the ionization rate (specified to 10$^{-4}$ s$^{-1}$ in our simula
 \end{align}
 
 Where $C_x = \dot{\rho} - n_n \sigma \left|\mathbf{u} - \mathbf{u}_n\right|$ is the charge exchange rate, $\mathbf{u}_n$ is the Keplerian velocity of the neutral particles orbiting Jupiter, and $\alpha$ is the recombination rate, which is set to 0 in our current work. As described above, the ion production rate in our simulation is a controlled parameter depending on the neutral profile, ionization rate, and collision cross section. In the present work, we set the total ion production rate of $\sim$1 ton/s. It is important to note that our approach of modeling the Io plasma torus is very different from those adopted by the previous Jupiter global MHD models. For instance, the \citeA{Miyoshi1997} MHD model had its inner boundary at 30 $R_J$. The inner boundary of the MHD model by \citeA{Ogino1998a} and \citeA{Fukazawa2005,Fukazawa2006a,Fukazawa2010a} lied at 15 $R_J$, while the \citeA{Moriguchi2008} model had its inner boundary at 8 $R_J$. The recent MHD model by \citeA{Chane2013a,Chane2017a} used an extended ionospheric region spanning from 4.5 to 8.5 $R_J$ and placed the Io torus at an unrealistic location of 10 $R_J$. In their recent model, \citeA{Wang2018ModelingSimulation} also chose to place the Io torus at 10 $R_J$ for the same reasons. Our model is the first global MHD model which models mass loading due to Io in a self‐consistent manner at the right location.
+
+The above mass loading parameters were chosen based on ad-hoc assumptions to provide an equivalent mass loading rate of 1 ton/s. In practice, other neutral profiles can also be used, but regions with high plasma density gradients, such as the Io plasma torus usually have higher rates of numerical diffusion, which can diffuse the initially prescribed density distribution. 
 
 \section{Magnetospheric configuration}
 To create the magnetosphere, we use steady solar wind conditions with a southward (negative $B_Z$ ) IMF (values are given in column 1 of Table 1) to minimize reconnection at the start of the simulation. We speed up the creation of the magnetosphere by using local time stepping \cite{Toth2012a} for 50000 iterations and then switch to time‐accurate mode for 150 hr to produce a quasi‐steady state magnetosphere. All simulations presented in this paper have been started either from this point or a later time step. Because of the large system size and long time scales involved in Jupiter's global magnetosphere, it is necessary to use the procedure described above in order to ensure that simulation results shown and discussed here are not from a period dominated by the initial transients.

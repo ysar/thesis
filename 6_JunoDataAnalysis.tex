@@ -148,7 +148,7 @@ In this section, we discuss the results of the survey of plasmoid events detecte
 
 \subsection{Duration}
 
-The algorithm detected 89 flux ropes which fulfilled all the criteria specified in section \ref{subsec:algorithm-fluxrope}. A histogram of their `peak-to-peak' duration, i.e. the separation between two extrema in $B_\theta$, is shown in Figure \ref{fig:duration-histogram}. The upper limit for an event was selected to be 300 s, as we focus on studying on the small scale structures. The lower limit was specified to 10 s to get sufficient data points within the event interval. Most of the events identified by the algorithm have a duration less than 150 s, with a mean of 65.67 s and median value of 47 s. 16 events were identified with durations between 20 and 30 s. 
+The algorithm detected 89 flux ropes between DOY 75, 2017 and DOY 301, 2019 which fulfilled all the criteria specified in section \ref{subsec:algorithm-fluxrope}. A histogram of their `peak-to-peak' duration, i.e. the separation between two extrema in $B_\theta$, is shown in Figure \ref{fig:duration-histogram}. The upper limit for an event was selected to be 300 s, as we focus on studying on the small scale structures. The lower limit was specified to 10 s to get sufficient data points within the event interval. Most of the events identified by the algorithm have a duration less than 150 s, with a mean of 65.67 s and median value of 47 s. 16 events were identified with durations between 20 and 30 s. 
 
 \begin{figure}
     \centering
@@ -189,15 +189,15 @@ In this analysis we assumed that the magnetic field signatures for tail-ward and
 
 \begin{figure}
     \centering
-    \includegraphics{images6/TrajectoryLocationofEvent_quiver_flux-rope.png}
-    \caption{Location of flux-ropes identified by the algorithm colored by the peak-to-peak duration. Also plotted in the top and bottom panels are the eigenvectors corresponding to the directions of intermediate ($\mathbf{x}_M$) and maximum variance ($\mathbf{x}_L$) respectively.}
+    \includegraphics[height=0.8\textheight]{images6/TrajectoryLocationofEvent_quiver_flux-rope.png}
+    \caption{Location of flux-ropes identified by the algorithm colored by the peak-to-peak duration. Also plotted in the top and bottom panels are the eigenvectors corresponding to the directions of intermediate ($\mathbf{x}_M$) and maximum variance ($\mathbf{x}_L$) respectively. Also plotted are 3D magnetic field lines from the Sarkango et al., (2019) MHD model. Note that in this particular model the field lines are symmetric about the equatorial plane.}
     \label{fig:trajectory-quiver-fluxropes}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics{images6/TrajectoryLocationofEvent_quiver_o-line.png}
-    \caption{Location of o-lines identified by the algorithm colored by the peak-to-peak duration. Also plotted in the top and bottom panels are the eigenvectors corresponding to the directions of minimum ($\mathbf{x}_N$) and maximum ($\mathbf{x}_L$) variance respectively.}
+    \includegraphics[height=0.8\textheight]{images6/TrajectoryLocationofEvent_quiver_o-line.png}
+    \caption{Location of o-lines identified by the algorithm colored by the peak-to-peak duration. Also plotted in the top and bottom panels are the eigenvectors corresponding to the directions of minimum ($\mathbf{x}_N$) and maximum ($\mathbf{x}_L$) variance respectively. Also plotted are magnetic field lines from the Sarkango et al., (2019) MHD model.}
     \label{fig:trajectory-quiver-olines}
 \end{figure}
 
@@ -221,8 +221,6 @@ Out of the 89 identified plasmoid events, 56 did not correspond to an increase i
 As seen in Figure \ref{fig:duration-histogram}, most plasmoid events detected by our algorithm within the 10 to 300 s specified range, are small and have a duration less than 150 s. Small-scale flux ropes have been observed to be released more frequently in particle-in-cell simulations, and observations of flux ropes in the solar wind have found that the flux rope sizes obey a power-law like distribution, with the most frequent events being smaller in size. Although our sample size is not that large (N=89), our findings suggest that reconnection does occur in Jupiter's magnetosphere on the small scale and produces small plasmoids relatively frequently. Note that the nature of Juno's orbit implies that small-scale plasmoids, which typically occur in close proximity to the current sheet (which is itself oscillating, see e.g. Chapter 5), can only be observed during limited time intervals.
 
 Most of these small-scale events with durations less than 150 s correspond to diameters which are on order of magnitude smaller or larger than the local ion inertial length (Figure \ref{fig:ion-inertial-scale}), which is close to the expected dimensions of the oxygen ion-diffusion region. A factor of 2 increase in the Alfven speed (to e.g. 400 km/s) will not have a significant influence on these findings, due to the wide range of sizes, and the occurrence of many events which are smaller than the expected ion inertial length. 
-
-As expected, most events which are observed close to the planet near the midnight magnetotail correspond to a north-to-south (or negative to positive) reversal of the magnetic field, hinting that they are moving planet-ward. Conversely, most plasmoids observed in the outer magnetosphere are seen to correspond to south-to-north signatures, indicating tail-ward motion. These results are consistent with the findings of \citeA{Vogt2010a}, who found a similar behaviour among large-scale events, through which they estimated the location of the reconnection x-line. 
 
 Using the minimum variance analysis, we estimated the directions of the core field separately for flux ropes (strong core field) and O-lines (weak core field). Our results suggest that most flux ropes have core fields which are skewed $\sim45^\circ$ with respect to the azimuthal direction, and are least likely to be in the radial direction, which is expected for a flux rope created due to magnetotail reconnection. However, the axes of the O-lines are found to have a strong preference for larger angles between 90$^\circ$ and $180^\circ$, and are least seen in the azimuthal direction. 
 

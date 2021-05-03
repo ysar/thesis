@@ -175,17 +175,19 @@
 % LIST OF TABLES ---------------------------------------------
 \def\makelistoftables{
 
-    \addcontentsline{toc}{chapter}{List of Tables}
     \begin{singlespacing}
     \listoftables
+    \addcontentsline{toc}{chapter}{List of Tables}
     \end{singlespacing}
+    \let\cleardoublepage\clearpage
 }   
 
 % LIST OF FIGURES --------------------------------------------
 \def\makelistoffigures{
-    \addcontentsline{toc}{chapter}{List of Figures}
     \begin{singlespacing}
     \listoffigures
+    \addcontentsline{toc}{chapter}{List of Figures}
     \end{singlespacing}
+    
     
 }   
